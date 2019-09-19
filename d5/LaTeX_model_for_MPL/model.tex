@@ -1,0 +1,386 @@
+%A LaTeX model for SYSU General Phys. Lab. by Probfia Gao.
+%用XeLaTeX编译
+\documentclass[11pt,a4paper]{ctexart}
+
+%在下面补全实验名，例如 实验BB3 光电效应实验。
+\newcommand{\ExpeName}{实验D5 CCD原理与应用}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[hmargin=1.25in,vmargin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage[colorlinks,
+            linkcolor=red,
+		 urlcolor=black]{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+
+
+\crefname{equation}{}{}
+\crefname{figure}{图}{图}
+\crefname{footnote}{注释}{注释}
+\crefname{table}{表}{表}
+
+%\cpic{<尺寸>}{<文件名>}}用于生成居中的图片。
+\newcommand{\cpic}[2]{
+\begin{center}
+\includegraphics[scale=#1]{#2}
+\end{center}
+}
+
+%\cpicn{<尺寸>}{<文件名>}{<注释>}用于生成居中且带有注释的图片，其label为图片名。
+\newcommand{\cpicn}[3]
+{
+\begin{figure}[H]
+\cpic{#1}{#2}
+\caption{#3\label{#2}}
+\end{figure}
+}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{equation}\begin{aligned}}
+\newcommand{\eea}{\end{aligned}\end{equation}}
+
+%输入单位和数学常数
+%下面所有命令需在公式环境下使用
+\newcommand{\e}{\mathrm{e}}   %自然常数e = \e
+\newcommand{\im}{\mathrm{i}}   %虚数单位i = \im
+\newcommand{\meter}{\mathrm{m}}      %单位/前缀 = \单位/前缀英文名
+\newcommand{\newton}{\mathrm{N}}  
+\newcommand{\joule}{\mathrm{J}}
+\newcommand{\second}{\mathrm{s}}
+\newcommand{\gram}{\mathrm{g}}
+\newcommand{\ampere}{\mathrm{A}}
+\newcommand{\kilo}{\mathrm{k}}
+\newcommand{\milli}{\mathrm{m}}
+\newcommand{\kelvin}{\mathrm{K}}
+\newcommand{\mole}{\mathrm{mol}}
+\newcommand{\volt}{\mathrm{V}}
+\newcommand{\nano}{\mathrm{n}}
+\newcommand{\degreeC}{^\circ \mathrm{C}}  %摄氏度符号 = \degreeC
+
+\newcommand{\unit}[1]{\rm \ #1}
+\newcommand{\emptyline}{\par \ \\ }
+
+\pagestyle{fancy}
+
+\fancyhead[L]{\footnotesize{中山大学物理与天文学院近代物理实验}}
+\fancyhead[R]{\footnotesize{\ExpeName}}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+%第一页
+\cpic{0.255}{e1}%学生信息和计分表格
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
+\hline
+年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
+姓名： & 高寒 & 学号： & 17353019 \\ \hline
+日期： & \today & 教师签名： &  \\ \hline
+\end{tabular}
+\end{table}
+\begin{center}
+\LARGE\textbf{{\ExpeName}}
+\end{center}
+\large{【实验报告注意事项】}
+\begin{enumerate}
+ \item 实验报告由三部分组成：
+ \begin{enumerate}
+  \item[1)]预习报告：（提前一周）认真研读\textbf{\uline{实验讲义}}，弄清实验原理；实验所需的仪器设备、用具及其使用（强烈建议到实验室预习），完成讲义中的预习思考题；了解实验需要测量的物理量，并根据要求提前准备实验记录表格（由学生自己在实验前设计好，可以打印）。预习成绩低于50\%者不能做实验{\color{red} (实验D2和D3需要提前一周的周四完成预习报告交任课老师批改，批改通过后，才允许做实验)}。
+
+  \item[2)]实验记录：认真、客观记录实验条件、实验过程中的现象以及数据。实验记录请用珠笔或者钢笔书写并签名（{\color{red}用铅笔记录的被认为无效}）。{\color{red}保持原始记录，包括写错删除部分，如因误记需要修改记录，必须按规范修改。}（不得输入电脑打印，但可扫描手记后打印扫描件）；离开前请实验教师检查记录并签名。
+  \item[3)]分析讨论：处理实验原始数据（学习仪器使用类型的实验除外），对数据的可靠性和合理性进行分析；按规范呈现数据和结果（图、表），包括数据、图表按顺序编号及其引用；分析物理现象（含回答实验思考题，写出问题思考过程，必要时按规范引用数据）；最后得出结论。
+ \end{enumerate}
+ \textbf{实验报告}就是预习报告、实验记录、和数据处理与分析合起来，加上本页封面。
+ \item 每次完成实验后的一周内交\textbf{实验报告}。
+ \item 除实验记录外，实验报告其他部分建议双面打印。
+\end{enumerate}
+\ 
+\\
+\ 
+
+\begin{flushright}                                                           %模板作者
+\tiny{
+A \LaTeX \ model for Modern Phys. Lab., SPA, SYSU by \em{\href{https://www.weibo.com/3532532974/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1}{Probfia} Gao.}
+}
+\end{flushright}
+\includepdf[pages=2-14]{preview.pdf}
+\iffalse
+\newpage%预习报告
+\begin{center}
+\LARGE{\textbf{\ExpeName}}
+\end{center}
+\textbf{【实验目的】}
+\begin{enumerate}
+ \item[1.] (目的1)
+ \item[2.] (目的2)
+\end{enumerate}
+\textbf{【仪器用具】}
+%将讲义中的表格截图保存为t1在该文件夹下后删去下一行之前的%符号，合理调整scale参数。
+%cpic{0.3}{t1}
+%或者自己去 https://www.tablesgenerator.com/ 做一个表。
+\textbf{【原理概述】}\par
+该实验\\
+\textbf{【实验前思考题】}
+\begin{enumerate}
+ \item[1.] (问题1)
+ \item[2.] (问题2)
+\end{enumerate}
+
+\newpage%实验记录
+%\cpic{0.255}{e2}%学生信息表格
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
+\hline
+年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
+姓名： & 高寒 & 学号： & 17353019 \\ \hline
+日期： &  & 实验地点： & 珠海教学楼 A102 \\ \hline
+学生签名： &  \includegraphics[scale=0.09]{sign}& 评分： &  \\ \hline
+日期： &  & 教师签名： &  \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\LARGE{\textbf{\ExpeName}}
+\end{center}
+\textbf{【实验内容、步骤、结果】}
+\par
+(表格)
+\newline
+\textbf{【实验过程中遇到问题记录】}\par
+\cpic{0.81}{none}
+\fi
+%生成最终报告时将上面内容全部删除或注释（用\iffalse \fi），将扫描得到的实验报告保存为Record.pdf在LaTeX model for GPL下，将下行命令的注释号删去。注意根据实际页数调整pages参数。
+\includepdf[pages=1-9]{Record}
+
+
+\newpage%分析与讨论
+%\cpic{0.255}{e3}%学生信息表格
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
+\hline
+年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
+姓名： & 高寒 & 学号： & 17353019 \\ \hline
+日期： & \today &  &  \\ \hline
+评分： &  & 教师签名： &  \\ \hline
+\end{tabular}
+\end{table}
+\begin{center}
+\LARGE\textbf{{\ExpeName}}
+\end{center}
+\textbf{【分析与讨论】}\\
+1.\textbf{线阵CCD驱动及特性分析}\par
+按要求接线，连接示波器\cite{dtem}发现，SH和RS的输出如\cref{RS}
+\cpicn{0.08}{RS}{复位信号RS的波形}
+周期分别为
+\bea
+T_{SH} &= 7.0 \unit{ms} \\
+T_{RH} &= 1.4 \unit{\mu s}
+\eea
+可以发现两者之间的关系为
+\beq
+T_{SH} = 5000 T_{RH}
+\eeq
+与工作时序图的示意相同。\par
+\cpicn{0.08}{revp}{$\Phi_1$和$\Phi_2$的反相输出}
+如\cref{revp}发现$\Phi_1$和$\Phi_2$的周期相同，为
+\beq
+T_{\Phi_1} = T_{\Phi_2} = 2.780 \unit{\mu s}
+\eeq
+且相位相差$180^\circ$，两者反相\cite{ced}交替变化，使得模拟移位寄存器在$\Phi_1$与$\Phi_2$脉冲的作用下驱使$\Phi_1$ 电极下势阱中的信号电荷向左移动，并经输出电路由 OS 电极输出。\cite{lec,att1,ccdwiki}
+\par
+观察CCD端在光照和遮挡下的输出如\cref{light,cover}，发现完全遮挡下，CCD不再输出脉冲信号，与预期相符。
+\cpicn{0.7}{light}{CCD输出端在光照下的输出信号}
+\cpicn{0.08}{cover}{CCD输出端在镜头被遮挡时的输出信号}
+\par
+不同阈值电压下的CCD二值化输出如\cref{hvolt,lvolt}。
+\cpicn{0.08}{hvolt}{高阈值电压下的CCD二值化输出}
+\cpicn{0.08}{lvolt}{低阈值电压下的CCD二值化输出}
+可以看到，低阈值电压下波包非常明显，体现出对外界的更灵敏响应。
+\par
+连接电脑，遮挡不同部位，观察到波形变化如\cref{open,close,l43,r12}。
+\cpicn{0.8}{open}{不遮挡时CCD输出波形}
+\cpicn{0.8}{close}{全遮挡时CCD输出波形}
+\cpicn{0.8}{l43}{遮挡左边3/4时CCD的输出波形}
+%\cpicn{0.8}{r12}{遮挡右半部分的CCD输出波形}
+观察可以发现，显示屏上的波形与线阵CCD上某点接受到的光强相关。
+\par
+加入遮挡物，修改CCD频率，输出波形变化如\cref{f300,f358,f444,f600,f800}。
+\cpicn{0.8}{f300}{CCD相机频率为$300\unit {kHz}$时的输出波形}
+\cpicn{0.8}{f358}{CCD相机频率为$358\unit {kHz}$时的输出波形}
+\cpicn{0.8}{f444}{CCD相机频率为$444\unit {kHz}$时的输出波形}
+\cpicn{0.8}{f600}{CCD相机频率为$600 \unit {kHz}$时的输出波形}
+\cpicn{0.8}{f800}{CCD相机频率为$800\unit {kHz}$时的输出波形}
+可以在波形上明显看出被测物的遮挡作用，且频率越大，遮挡越明显。
+\par
+调整积分时间，波形变化如\cref{int4999,int7999,int12499,int16199,int19999}。
+\cpicn{0.8}{int4999}{积分时间为$4999 \unit{\mu s}$的输出波形}
+\cpicn{0.8}{int7999}{积分时间为$7999 \unit{\mu s}$的输出波形}
+\cpicn{0.8}{int12499}{积分时间为$12499 \unit{\mu s}$的输出波形}
+\cpicn{0.8}{int16199}{积分时间为$16199 \unit{\mu s}$的输出波形}
+\cpicn{0.8}{int19999}{积分时间为$19999 \unit{\mu s}$的输出波形}
+可以看到，在高积分时间下，遮挡物的作用越加不明显，波形趋于饱和。
+\emptyline
+\\
+2.\textbf{利用线阵CCD测量工作直径和角位置}\par
+根据之前的实验发现，驱动频率为$800 \unit{kHz}$，脉冲积分时间为$9999 \unit{\mu s}$时，被测物的遮挡作用较为显著。利用$\phi 12$的标准器件得到实际物理尺寸与像素值的换算关系为
+\beq
+12\unit{mm} \equiv 842.654478 \unit{pix}
+\eeq
+测量物体直径如\cref{12}
+\cpicn{0.8}{12}{测量$\phi 12$物体的直径}
+四次重复实验的结果为
+\bea
+d_1 &= 11.931166\unit{mm} \\
+d_2 &= 11.954111\unit{mm} \\
+d_3 &= 12.015432 \unit{mm} \\
+d_4 &= 11.975548 \unit{mm}
+\eea
+平均值
+\beq
+\bar{d} =\frac{11.931166+11.954111+12.015432+11.975548}{4}\unit{mm}  = 11.969\unit{mm}
+\eeq
+平均值的标准偏差
+\beq
+\sigma_{\bar{d}} = 0.036\unit{mm}
+\eeq
+标准值$12\unit{mm}$落在$1\sigma$范围内，结果较为精确。
+\par
+类似地测量$\phi10$圆柱体得到
+\bea
+d_1 &= 10.035462\unit{mm} \\
+d_2 &= 9.932675 \unit{mm}\\
+d_3 &= 9.989101\unit{mm} \\
+d_4 &= 10.065479\unit{mm}
+\eea
+平均值和标准差为\cite{error}
+\beq
+d = 10.006 \pm 0.06 \unit{mm}
+\eeq
+标准值亦落在$1\sigma$误差范围内。
+\par
+进行角位置测量如\cref{angle}。
+\cpicn{0.8}{angle}{角位置测量示意}
+测量移动平面镜前后峰的位置变化为$s \unit{pix}$，而反射镜到CCD的距离为$d = 17.85\unit{cm}$，根据换算关系$1\unit{pix} \equiv 14\unit{\mu m}$可知，$d = 12750\unit{pix}$。于是转动的弧度值
+\beq
+\alpha = \frac{1}{2} \frac{s\unit{pix}}{d} = \frac{s}{25500} \unit{rad}
+\eeq
+四次转动对应的角度为
+\bea
+\alpha_1 &= \frac{1430.13-1133.67}{25500} \unit{rad} = 0.01163 \unit{rad}\\
+\alpha_2 &= \frac{1165.89-898.44}{25500} \unit{rad} = 0.01049\unit{rad}\\
+\alpha_3 &= \frac{1467.19-853.32}{25500} \unit{rad} = 0.02407\unit{rad}\\
+\alpha_4 &= \frac{1533.25-1173.95}{25500} \unit{rad} = 0.01409\unit{rad}
+\eea
+可以发现，该测量方法能够精确地测量小角度角位移。误差可能主要来自峰的弥散。
+\emptyline
+\\
+3.\textbf{面阵CCD图像采集、运算和颜色处理}\par
+打开面阵CCD测量软件\cite{att2}，图像清晰后停止捕获，如\cref{image}。
+\cpicn{0.6}{image}{捕获的原始图像}
+灰度直方图如\cref{grey_hist}
+\cpicn{0.8}{grey_hist}{原始图像的灰度直方图}
+对图像进行灰度线性变换
+\beq
+y = 3x
+\eeq
+如\cref{3x}
+\cpicn{0.8}{3x}{进行灰度线性变换$y=3x$下的图像}
+可以看出，灰度增大下，图像的亮度变高。\par
+进行灰度阈值变换如\cref{Snipaste_2019-09-16_17-51-41,Snipaste_2019-09-16_17-51-56}。
+\cpicn{0.8}{Snipaste_2019-09-16_17-51-41}{灰度阈值变换}
+\cpicn{0.8}{Snipaste_2019-09-16_17-51-56}{灰度阈值变换}
+可以发现，图中的几个阈值变换对图像没有明显改变。
+\par
+进行灰度拉伸变换后的结果如\cref{Snipaste_2019-09-16_17-51-29}，可以发现图像颜色出现明显畸变、变黑，这是由于灰度过于分散。
+\cpicn{0.8}{Snipaste_2019-09-16_17-51-29}{灰度拉伸变换}
+而对原图进行灰度均衡变换得到的结果如\cref{Snipaste_2019-09-16_17-53-30}，此时的灰度直方图如\cref{Snipaste_2019-09-16_17-53-37}。
+\cpicn{0.8}{Snipaste_2019-09-16_17-53-30}{灰度均衡变换后的图像}
+\cpicn{0.8}{Snipaste_2019-09-16_17-53-37}{灰度均衡变换后的灰度直方图}
+与\cref{grey_hist}对比可以看到，灰度均衡变换使得灰度分布更加均匀，从而使得图像在视觉上显得更加明亮。
+\emptyline
+\\
+4.\textbf{利用面阵CCD测量工件二维尺寸}\par
+利用面阵CCD测量工件圆孔内径如\cref{Snipaste_2019-09-16_17-58-33,Snipaste_2019-09-16_18-01-13,Snipaste_2019-09-16_18-01-24}
+\cpicn{0.8}{Snipaste_2019-09-16_17-58-33}{测量工件圆孔内径}
+\cpicn{0.8}{Snipaste_2019-09-16_18-01-13}{测量工件圆孔内径}
+\cpicn{0.8}{Snipaste_2019-09-16_18-01-24}{测量工件圆孔内径}
+结果为
+\bea
+d_1 &= 2.654\unit{mm} \\
+d_2 &= 2.699 \unit{mm} \\
+d_3 &= 2.716 \unit{mm}
+\eea
+均值
+\beq
+\bar d = \frac{2.654+2.699+2.716}{3}  = 2.690 \unit{(mm)}
+\eeq
+标准差
+\beq
+\sigma_d = \frac{1}{\sqrt{3}} \sqrt{\frac{1}{3-1}[(2.654-2.69)^2 +(2.699-2.69)^2 +(2.716-2.69)^2 ]} = 0.018\unit{(mm)}
+\eeq
+游标卡尺的测量结果为
+\beq
+d_{ref} = 2.70 \unit{mm}
+\eeq
+相差无几，说明CCD测量比较精准。
+\par
+测量圆孔孔距如\cref{Snipaste_2019-09-16_17-59-23,Snipaste_2019-09-16_18-02-21,Snipaste_2019-09-16_18-02-34}
+\cpicn{0.8}{Snipaste_2019-09-16_17-59-23}{圆孔孔距测量}
+\cpicn{0.8}{Snipaste_2019-09-16_18-02-21}{圆孔孔距测量}
+\cpicn{0.8}{Snipaste_2019-09-16_18-02-34}{圆孔孔距测量}
+结果为
+\bea
+d_1 &= 17.929\unit{mm} \\
+d_2 &= 17.968 \unit{mm} \\
+d_3 &= 18.126 \unit{mm}
+\eea
+均值
+\beq
+\bar d = \frac{17.929+17.968+18.126}{3}  = 18.008 \unit{(mm)}
+\eeq
+标准差
+\beq
+\sigma_d = \frac{1}{\sqrt{3}} \sqrt{\frac{1}{3-1}[(17.929-18.008)^2 +(17.968-18.008)^2 +(18.126-18.008)^2 ]} = 0.060\unit{(mm)}
+\eeq
+游标卡尺的测量结果为
+\beq
+d_{ref} = 18.00 \unit{mm}
+\eeq
+相差无几，说明CCD测量比较精准。
+\par
+测量圆孔孔距如\cref{Snipaste_2019-09-16_18-00-41,Snipaste_2019-09-16_18-01-01,Snipaste_2019-09-16_18-01-13}
+\cpicn{0.8}{Snipaste_2019-09-16_18-00-41}{平行线距测量}
+\cpicn{0.8}{Snipaste_2019-09-16_18-01-01}{平行线距测量}
+\cpicn{0.8}{Snipaste_2019-09-16_18-01-13}{平行线距测量}
+结果为
+\bea
+d_1 &= 9.402\unit{mm} \\
+d_2 &= 9.407 \unit{mm} \\
+d_3 &= 9.405 \unit{mm}
+\eea
+均值
+\beq
+\bar d = \frac{9.402+9.407+9.405}{3}  = 9.405 \unit{(mm)}
+\eeq
+标准差
+\beq
+\sigma_d = \frac{1}{\sqrt{3}} \sqrt{\frac{1}{3-1}[(9.402-9.405)^2 +(9.407-9.405^2 +(9.405-9.405)^2 ]} = 0.002\unit{(mm)}
+\eeq
+游标卡尺的测量结果为
+\beq
+d_{ref} = 9.22 \unit{mm}
+\eeq
+两者间有一定差距，误差可能源自程序对线状边缘的识别不是很精确。
+\par
+如果被测物较厚，该方法测量的误差可能较大，因为标定尺明显远于被测物表面使得标定存在系统误差。
+
+\bibliographystyle{IEEEtran}
+\bibliography{model.bib}
+
+\end{document}

@@ -306,7 +306,7 @@ l = \frac{k_B T}{P \sigma} \sim \frac{1}{P}
 \item 实验完毕后，调节气体流量控制旋钮至最小位置，调节电压至最小值，依次关闭电压、机械泵、
 电源开关。
 \end{enumerate}
-\cpic{0.81}{t2}
+\includepdf[pages=1]{Record.pdf}
 \emptyline
 \\
 3.\textbf{使用四极质谱仪，进行真空系统检漏和真空环境分析}\par
@@ -408,7 +408,32 @@ V = \frac{bP}{\ln aP}
 \eeq
 因此以$\ln P$为纵坐标，$\frac{P}{V}$为横坐标，得到的结果理因是线性的。
 \par
-对
+对极板间距为$5\unit{cm}$的数据进行如上处理，得到回归直线如\cref{lin1}。
+\cpicn{0.4}{lin1}{极板间距为$5\unit{cm}$时的$p/V-\ln P$回归直线}
+回归直线中的各参数
+\bea
+b &= 21.4 \pm 1.36 \unit{ V/Pa} \\
+a &= 0.154 \pm 0.016 \unit{Pa^{-1}}
+\eea
+对应帕邢定律中的参数
+\bea
+B = \frac{b}{d} &= 4.28 \pm 0.27\unit{ V/(Pa\cdot cm)} \\
+\frac{A}{\ln (1 + 1/\gamma)} = \frac{a}{d} &= 0.0308 \pm 0.0032 \unit{(Pa\cdot cm )^{-1}}
+\eea
+\par
+对极板间距为$4\unit{cm}$的数据进行如上处理，得到回归直线如\cref{lin2}。
+\cpicn{0.4}{lin2}{极板间距为$4\unit{cm}$时的$p/V-\ln P$回归直线}
+回归直线中的各参数
+\bea
+b &= 24.5 \pm 0.7 \unit{ V/Pa} \\
+a &= 0.1556 \pm 0.0047 \unit{Pa^{-1}}
+\eea
+对应帕邢定律中的参数
+\bea
+B = \frac{b}{d} &= 6.13 \pm 0.18\unit{ V/(Pa\cdot cm)} \\
+\frac{A}{\ln (1 + 1/\gamma)} = \frac{a}{d} &= 0.0389 \pm 0.0012 \unit{(Pa\cdot cm )^{-1}}
+\eea
+可以看到，两次实验间，参数的值发生了明显变化，可能是因为装置内部环境变化导致。
 \emptyline
 \\
 3.\textbf{真空系统检漏和真空环境分析}\par
