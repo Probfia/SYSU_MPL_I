@@ -1,0 +1,527 @@
+%A LaTeX model for SYSU General Phys. Lab. by Probfia Gao.
+%用XeLaTeX编译
+\documentclass[11pt,a4paper]{ctexart}
+
+%在下面补全实验名，例如 实验BB3 光电效应实验。
+\newcommand{\ExpeName}{实验D1 锁相放大器与弱信号测量}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[hmargin=1.25in,vmargin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage[colorlinks,
+            linkcolor=red,
+		 urlcolor=black]{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+
+
+\crefname{equation}{}{}
+\crefname{figure}{图}{图}
+\crefname{footnote}{注释}{注释}
+\crefname{table}{表}{表}
+
+%\cpic{<尺寸>}{<文件名>}}用于生成居中的图片。
+\newcommand{\cpic}[2]{
+\begin{center}
+\includegraphics[scale=#1]{#2}
+\end{center}
+}
+
+%\cpicn{<尺寸>}{<文件名>}{<注释>}用于生成居中且带有注释的图片，其label为图片名。
+\newcommand{\cpicn}[3]
+{
+\begin{figure}[H]
+\cpic{#1}{#2}
+\caption{#3\label{#2}}
+\end{figure}
+}
+
+\newcommand{\red}{\color{red}}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{equation}\begin{aligned}}
+\newcommand{\eea}{\end{aligned}\end{equation}}
+
+%输入单位和数学常数
+%下面所有命令需在公式环境下使用
+\newcommand{\e}{\mathrm{e}}   %自然常数e = \e
+\newcommand{\im}{\mathrm{i}}   %虚数单位i = \im
+\newcommand{\meter}{\mathrm{m}}      %单位/前缀 = \单位/前缀英文名
+\newcommand{\newton}{\mathrm{N}}  
+\newcommand{\joule}{\mathrm{J}}
+\newcommand{\second}{\mathrm{s}}
+\newcommand{\gram}{\mathrm{g}}
+\newcommand{\ampere}{\mathrm{A}}
+\newcommand{\kilo}{\mathrm{k}}
+\newcommand{\milli}{\mathrm{m}}
+\newcommand{\kelvin}{\mathrm{K}}
+\newcommand{\mole}{\mathrm{mol}}
+\newcommand{\volt}{\mathrm{V}}
+\newcommand{\nano}{\mathrm{n}}
+\newcommand{\degreeC}{^\circ \mathrm{C}}  %摄氏度符号 = \degreeC
+
+\newcommand{\unit}[1]{\rm \ #1}
+\newcommand{\emptyline}{\par \ \\ }
+
+\pagestyle{fancy}
+
+\fancyhead[L]{\footnotesize{中山大学物理与天文学院近代物理实验}}
+\fancyhead[R]{\footnotesize{\ExpeName}}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+%第一页
+\cpic{0.255}{e1}%学生信息和计分表格
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
+\hline
+年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
+姓名： & 高寒 & 学号： & 17353019 \\ \hline
+日期： & \today & 教师签名： &  \\ \hline
+\end{tabular}
+\end{table}
+\begin{center}
+\LARGE\textbf{{\ExpeName}}
+\end{center}
+\large{\bf【实验报告注意事项】}
+\begin{enumerate}
+ \item 实验报告由三部分组成：
+ \begin{enumerate}
+  \item[1)]预习报告：（提前一周）认真研读\textbf{\uline{实验讲义}}，弄清实验原理；实验所需的仪器设备、用具及其使用（强烈建议到实验室预习），完成讲义中的预习思考题；了解实验需要测量的物理量，并根据要求提前准备实验记录表格（由学生自己在实验前设计好，可以打印）。预习成绩低于50\%者不能做实验{\color{red} (实验D2和D3需要提前一周的周四完成预习报告交任课老师批改，批改通过后，才允许做实验)}。
+
+  \item[2)]实验记录：认真、客观记录实验条件、实验过程中的现象以及数据。实验记录请用珠笔或者钢笔书写并签名（{\color{red}用铅笔记录的被认为无效}）。{\color{red}保持原始记录，包括写错删除部分，如因误记需要修改记录，必须按规范修改。}（不得输入电脑打印，但可扫描手记后打印扫描件）；离开前请实验教师检查记录并签名。
+  \item[3)]分析讨论：处理实验原始数据（学习仪器使用类型的实验除外），对数据的可靠性和合理性进行分析；按规范呈现数据和结果（图、表），包括数据、图表按顺序编号及其引用；分析物理现象（含回答实验思考题，写出问题思考过程，必要时按规范引用数据）；最后得出结论。
+ \end{enumerate}
+ \textbf{实验报告}就是预习报告、实验记录、和数据处理与分析合起来，加上本页封面。
+ \item 每次完成实验后的一周内交\textbf{实验报告}。
+ \item 除实验记录外，实验报告其他部分建议双面打印。
+\end{enumerate}
+
+\ 
+\\
+\ 
+
+\begin{flushright}                                                           %模板作者
+\tiny{
+A \LaTeX \ model for Modern Phys. Lab., SPA, SYSU by \em{\href{https://www.weibo.com/3532532974/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1}{Probfia} Gao.}
+}
+\end{flushright}
+
+\newpage
+\large{\bf【实验安全注意事项】}{\red
+\begin{enumerate}
+\item OE1022 锁相放大器输入端不能接入强信号;接入信号需限定在$1\unit V$以下。
+\item OE4004 稳流源的电流输出不能直接接入 OE1022 锁相放大器的输入端。
+\end{enumerate}
+}
+
+\newpage
+\newpage%预习报告
+\begin{center}
+\LARGE{\textbf{\ExpeName}}
+\end{center}
+\textbf{【实验目的】}
+\begin{enumerate}
+ \item[1.]了解锁相放大器工作原理和特点，掌握锁相放大器基本参数含义及锁相放大器的基本 操作;复习示波器的使用；（实验内容 1）
+  \item[2.]掌握用锁相放大器检测出湮没于噪声中的弱信号方法；（实验内容 2）
+  \item[3.]通过本实验更加直观的了解方波的高频成分，并掌握用锁相放大器检测微弱信号中的谐波；（实验内容 3）
+\item[4.]掌握交流四引线法精密测量小阻抗的原理和方法，理解相位的物理含义及电压与电流之间相位差的测量方法；（实验内容 4，探索）
+\item[5.] 学习 VISA 接口协议，通过 LabVIEW 环境用 PC 机控制锁相放大器数据采集；（实验内容 4）
+\item[6.]了解 PN 结结电容，探究变容二极管内 PN 结电容与反偏电压的关系；（实验内容 5）
+\item[7.] 通过实验了解热噪声的特征，理解热噪声的本质及其统计意义。（实验内容 6，探索）
+\end{enumerate}
+\emptyline
+\\
+\textbf{【仪器用具】}
+%将讲义中的表格截图保存为t1在该文件夹下后删去下一行之前的%符号，合理调整scale参数。
+\begin{table}[H]
+\cpic{0.4}{t1}
+\caption{弱信号检测实验仪器用具}
+\end{table}
+%或者自己去 https://www.tablesgenerator.com/ 做一个表。
+\emptyline
+\\
+\textbf{【原理概述】}\par
+现代测量中，所有的物理最终都转换为电压或光强进行记录和处理，我们称之为携带被测量物理量信息的电或光信号；然而所有的测量，即使完全由机器自动进执行，结果都不可避免地引入待测量以外的其他信息，如环境干扰、不确定等，在所测量的信号不可避免地携带了噪声。测量结果（信号$x(t)$）可以视作被测量信号$s(t)$与噪声$n(t)$的叠加$x(t) = s(t) + n(t) $。
+\par
+一般来说，信号是运载信息的工具，是信息的载体。任何携带某个现象属性或行为信息的物理量都可以作为信号，如光信号、声信号和电信号等。物理世界中的信号都是有规律地随时间或空间变化的。数学上以函数的形式$x(t)$描述信号。
+\par
+最简单的信号用单一频率的三角函数的描述
+\beq \label{eq1}
+s_\omega (t) = a \cos (\omega_0 t + \varphi) 
+\eeq
+它包含了三个最基本的信息，即振幅$a$、频率$\omega_0$和相位$\varphi$，它对于信号载体对应着不同的物理含义。在实际应用中，人们往往只用到其中的一个或两个基本信息来进行信号传递或处理，而对于科学探索可能会全方位地用到所有的信息。\cref{eq1}是在时域下对信号的描述;在频域下该信号的数学描述为：
+\beq
+s_e(\omega) = \begin{cases}
+a &, \omega = \omega_0 \\
+0 &, \omega \not= \omega_0
+\end{cases}
+\eeq
+其形式更简单，但丢失了相位的信息。基本信号的更一般数学描述是复数形式：
+\beq
+s_\omega (t) = ae^{i (\omega t + \phi)}
+\eeq
+它包含了式$\cref{eq1}$描述的实况和虚部，具有更丰富的物理内含和更简洁的数学表达。
+\par
+一般周期性的信号（函数）都可以傅立叶级数展开：
+\beq \label{eq4}
+s(t) = \sum_n a_n e^{i(n \omega_0 t + \varphi)}
+\eeq
+因此，只要讲清楚一种基本形式的信号处理过程，就可推广到一般的信号处理过程。
+\par
+广义地说，不是待测信号本身的、对测量值的贡献都可视为噪声。它可分为来自外界的环境噪声，最典型的是市电噪声（$50\unit{Hz}$）;以及来自被测量对象本身的噪声，如热噪声。它们都混合待测信号的测量值中。
+\par
+从物理角度来看，任何待物理量都包含无规、随机的变化，这就是噪声。它是对有规律的信号的一种随机干扰，往往被扩展为与待测信号相冲突的无用信号。例如白噪声，是电子器件和电路中常见的一种噪声，电阻的热噪声，PN结的散弹噪声等都是白噪声，它在时域和频域都呈均匀分布。换句话说，{\red 对于一项实验，噪声可来自于实验对象本身，也可来自于测量系统， 包括传感器和测量仪器，更可能来自于实验系统以外的环境}。
+\par
+对于有规律变化的环境噪声，可用\cref{eq4}式来表述：它的频率可能与待测信号的频率相同或相近，但更可能是其他频率。在时域可以看成频率不同、振幅随机的“信号”叠加\footnote{单个傅立叶模的振幅不应显含时间$t$，讲义拟有误。}：
+\beq
+n(t) = \sum_\omega b(\omega) e^{i\omega t}
+\eeq
+其中振幅$b(\omega)$可能是常量（如市频干扰），亦可能是随机量$r(\omega)$；在频域中，随机噪声也可以理解为每一时刻的噪声电压频谱$n(\omega) $都不会是一样的\footnote{拟有误，随机噪声应该理解成一维随机高斯场。}
+\par
+以上讲义内容都是鬼扯，要理解噪声必须明白随机过程的概念和两点关联函数，功率谱等关键统计量。一段信号$f(t)$的两点关联函数定义为
+\beq
+\xi(t_2,t_1) = \langle f(t_2) f(t_1) \rangle
+\eeq
+根据噪声随时间均匀同性的特点，单点关联函数，即噪声在某点上的期望$\langle \xi(t)\rangle$必须为0；，$\xi(t_2,t_1)$必须只依赖于$|t_2 - t_1|$。记$\xi(|t_2-t_1|) = \xi(t)$，可以求$\xi(t)$的傅立叶变换
+\bea
+\xi(\omega_1,\omega_2) &= \int dt_1 dt_2 e^{i\omega_1 t_1 + i\omega_2 t_2} \xi(t_2,t_1) \\
+&= \int dt dt_2 e^{i\omega_1 (t_2 + t) + i\omega_2 t_2} \xi(t) \\
+&= 2\pi \delta(\omega_1 +\omega_2) \int dt e^{i\omega_1 t}   \xi(t)
+\eea
+其中引入了记号$t = t_1 - t_2$和积分公式
+\beq
+\int dt e^{i \omega t} = 2\pi \delta(\omega)
+\eeq
+积分$\int dt e^{i\omega_1 t}   \xi(t)$的结果只依赖于模式$\omega_1$，定义功率谱
+\beq \label{powsp}
+P(\omega)= \int dt \xi(t) e^{i\omega t}
+\eeq
+进一步利用$\xi(t) = \xi(-t)$的性质写出
+\beq
+P(\omega) = \int_{t>0} \xi(t) \cos \omega t
+\eeq
+可以立刻看出$P(\omega) = P(-\omega)$，于是实际问题中通常只讨论$\omega>0$的部分。\par
+现在傅立叶空间中的两点关联函数可以写成
+\beq
+\xi(\omega_2,\omega_1) = 2\pi \delta(\omega_1 + \omega_2) P(\omega_1)
+\eeq
+变换回时域空间，两点关联函数
+\bea
+\xi(t_2,t_1) &= \int \frac{d\omega_2 d\omega_1}{(2\pi)^2} 2\pi \delta(\omega_1 + \omega_2) P(\omega_1) e^{i\omega_1 t_1 + i\omega_2 t_2} \\
+&= \int \frac{d\omega}{2\pi} P(\omega) e^{i\omega(t_1 - t_2)}
+\eea
+特别地，信号在某点处的均方
+\beq \label{rms}
+\langle f(t)^2 \rangle = \xi(t,t) = \int \frac{d\omega}{2\pi} P(\omega)
+\eeq
+这也是$P(\omega)$被称作功率谱的原因。对应完全的噪声信号，上式就等于方差。
+\par
+功率谱是信号的基本性质，在宇宙学中有非常重要的作用，例如对于不同的暴涨模型可以通过计算暴涨期间量子涨落带来的功率谱得到暴涨结束时的功率谱，最后通过功率谱计算晚期宇宙结构演化验证暴涨模型的正确与否\cite{cosmo}。
+\par
+现在我们可以给出白噪声的严格定义：白噪声定义为功率谱为常数的噪声信号。
+\par
+信噪比定义为信号的有效值（均方根）和噪声的有效值之比
+\beq
+SNR = \frac{S}{N}
+\eeq
+得到信噪比的频域表达是有用的。设$f(t)$为一段信号，按傅立叶模展开为
+\beq
+f(t) = \int \frac{d\omega}{2\pi} f(\omega) e^{i\omega t}
+\eeq
+其平方积分为
+\bea
+\int dt [f(t)]^2 &= \int dt \int \frac{d\omega_1}{2\pi} f(\omega_1) e^{i\omega_1 t} \int \frac{d\omega_2}{2\pi} f(\omega_2) e^{i\omega_2 t}  \\
+&= \int \frac{d\omega_1 d\omega_2}{(2\pi)^2}  f(\omega_1)f(\omega_2)  2\pi \delta(\omega_1 + \omega_) \\
+&= \int \frac{d\omega}{2\pi} f(\omega) f(-\omega) = \int \frac{d\omega}{2\pi} |f(\omega)|^2
+\eea
+信噪比是科学与工程中所用的一种度量，用于比较所需信号的强度与背景噪声的强度，表 征噪声对信号的覆盖程度。
+通过信号处理可提高信噪比，即提高了信号质量。为反映信号质量改善的程度，定义信噪改善比$SNIR$。
+\beq
+SNIR = \frac{SNR_0}{SNR_i}
+\eeq
+式中，$SNR_o$是经过处理（系统输出端）的信噪比，$SNR_i$是未经过处理（系统输入端）的信噪 比。$SNIR$越大，表明系统抑制噪声的能力越强。
+\par
+“微弱信号”不只意味着信号的绝对幅度很小，而是相对于噪声而言幅度很小，特别是那些被噪声淹没的信号，都称作微弱信号。只有在有效地抑制噪声的条件下放大微弱信号的幅度， 才能提取出真实的信号。因此，微弱信号检测所一门专门针对噪声的技术，其主要任务是提高信噪比。\par
+提高信噪比的途径有两方面：一是通过物理屏蔽来抑制环境噪声，还可以通过不做实验来避免遭遇噪声，另一方面是通过信号处理滤除噪声。通常物理屏蔽的代价不少，关键是有另一类噪声在理论上不能通过物理屏蔽来抑制或隔断，它就是来自测量对象本身的噪声，尽管此类噪声在幅度上可能远低于环境噪声；因此，对于不能被屏蔽的噪声，信号处理就成为唯一的选择。\par
+为了从噪声中提取出有用的信号，就需要研究噪声的来源与性质，分析噪声产生的原因和规律，以及噪声的传播途径，有针对性地采取有效措施抑制噪声，研究被测信号和噪声的统计特性及其差别，以寻找出从背景噪声中检测出有用信号的方法。
+\par
+小信号是相对微弱信号信噪比更高的信号，可以采用{\bf 滤波}的方法进行信噪比的提升以实现精确测量。这个说白了就是把不需要的傅立叶模式删掉。
+\par
+设输入信号为$s(t) + n(t)$，信号$s(t)$的傅立叶模单一，为$a \delta(\omega - \omega_0)$；噪声的傅立叶变换由其功率谱决定，傅立叶模式的涨落幅度为$\sim \sqrt{P(\omega)}$，其中$P(\omega)$为前面提到的功率谱。总输入的傅立叶变换为
+\beq
+f(\omega) = a \delta(\omega - \omega_0) + \sqrt{P(\omega)}
+\eeq
+其中$\sqrt{P(\omega)}$表示均值为0，方差为$P(\omega)$的一个随机变量，其每个时刻的值是未知的，但功率可以对功率谱积分算出。带通滤波的作用是删去$(\omega_0 - \frac{\Delta \omega}{2} , \omega_0+ \frac{\Delta \omega}{2})$以外的信号，滤波后的总信号为
+\bea
+f_o (t) &= \int_{\omega - \frac{\Delta \omega}{2}}^{\omega+ \frac{\Delta \omega}{2}} \frac{d\omega}{2\pi} \left(a \delta(\omega - \omega_0) + \sqrt{P(\omega)}\right) e^{i \omega t} \\
+&= ae^{i\omega_0 t} + \int_{\omega - \frac{\Delta \omega}{2}}^{\omega+ \frac{\Delta \omega}{2}} \frac{d\omega}{2\pi} \sqrt{P(\omega)}e^{i \omega t}
+\eea
+滤波前后的信噪比分别为
+\beq
+SNR_i = \frac{a^2}{\int_{-\infty}^\infty \frac{d\omega}{2\pi} P(\omega)}
+\eeq
+\beq
+SNR_o = \frac{a^2}{\int_{\omega_0 - \frac{\Delta \omega}{2}}^{\omega_0 + \frac{\Delta \omega}{2}} \frac{d\omega}{2\pi} P(\omega)}
+\eeq
+信噪改善比
+\beq
+SNIR = \frac{SNR_o}{SNR_i} = \frac{\int_{-\infty}^{\infty} d\omega P(\omega)}{\int_{\omega_0 - \frac{\Delta \omega}{2}}^{\omega_0+ \frac{\Delta \omega}{2}}    d\omega P(\omega)}
+\eeq
+例如当噪声信号为分布宽度为$\Delta \omega_0$的白噪声时
+\beq
+SNIR = \frac{\Delta \omega_0}{\Delta \omega} > 1
+\eeq
+\par
+低通滤波是将频率高于$\omega_c$的频率作截断，再将剩余的信号放大$A$倍。\footnote{再次强调，$\sqrt{P(\omega)}$不是确定的傅立叶模大小，而是一个随机变量。}
+\beq
+f(t) = Aae^{i\omega_0 t} + A \int_{-\infty}^{\omega_c} \sqrt{P(\omega)} e^{i \omega t}
+\eeq
+当然我们需要$\omega_c > \omega_0$。和之前的推导无异，现在的信噪改善比
+\beq
+SNIR = \frac{\int_{-\infty}^{\infty} d\omega P(\omega)}{\int_{-\infty}^{\omega_c}    d\omega P(\omega)}
+\eeq
+由于$P(\omega)$半正定，上式恒大于1。
+\par
+实际中可以用示波器进行简单滤波，如\cref{filter}。
+\cpicn{0.6}{filter}{$Q$值为 20 的滤波器滤波前后的信号:(a)、(b)分别为滤波前后的时域图;(c)、(d)分别为滤波前后的频域图。}
+\par
+另一种削弱噪声信号的方法为{\bf 零位法}，零位法的本质是比较法测量。一般直接指示型测量仪表的测量方法是将被测信号放大到一定幅度，以驱动表头指针的偏转角度指示被测量的大小;或者经模数转换和数据处理后由液晶显示被测量的数值。而零位法是调整对比量的大小使其尽量接近被测量，由对比量指示被测量的大小，如\cref{d16}所示。图中的零位表指针只用来指示被测量和对比量的差异值，当零位表指示近似为零时，对比量的大小就表征了被测量的大小。对比量的调整可以手动实现，也可闭 环自动调整，如\cref{d16}中虚线所示。用这种方法测量的分辨率取决于对比量的调整和指示的分辨率。用机械测量类比，弹簧秤是一种直接指示仪表，而天平则是一种零位法仪表。
+\par
+由\cref{d16}可以看出，虽然被测量和对比量在传输过程中分别附加了干扰噪声$n_1(t)$和$n_2(t)$，但是在对比相减的过程中，$n_1(t)$和$n_2(t)$会在一定程度上相互抵消。两路信号传输过程越相似，$n_1(t)$和$n_2(t)$也会越近似，抵消作用越好。因此，与直接指示测量方法相比，零位法测量结果的信噪比更高，测量精度也更高。
+\par
+设被测信号
+\beq
+f(t) = s(t) + n_1 (t)
+\eeq
+对比量信号
+\beq
+f_r(t) = s_r(t) + n_2 (t)
+\eeq
+测量其差值得到
+\beq
+\Delta f (t) = s(t) - s_r(t) + n_1(t) - n_2(t)
+\eeq
+很容易想到，调节$s_r(t)$使得$\Delta f(t)$的功率谱最小时，$s(t) = s_r(t)$\footnote{讲义上原为$\Delta f(t) = 0$，这是显然错误的。}设两个噪声信号完全相干，那么噪声的功率谱将相消而降为零；若两个噪声完全不相干，其差值的两点关联函数
+\beq
+\langle (n_1(t_1) - n_2(t_1))(n_1(t_2)-n_2(t_2))\rangle = \langle n_1(t_1) n_1(t_2) \rangle + \langle n_2(t_1) n_2(t_2)\rangle
+\eeq
+故其功率谱为两个噪声功率谱相加。虽然也可以调节$s_r$使得总功率最小来测量原信号，但如果噪声信号非常强，在操作上很难进行，因此这种方法只适合相干噪声的消除。
+\par
+本实验重点关注锁相放大法。锁相放大器也称锁定放大器，是通过特定的载波将湮没在噪声中的微弱信号提取出来的技术。锁相放大技术采用了频谱迁移和交流放大技术、用相敏检测器和低通滤波器来实现调制信号的解调。锁相放大器抑制噪声有三个基本出发点:
+\begin{itemize}
+\item 用调制器将直流或慢变信号的颏谱迁移到调制频率$\omega_0$处,再进行放大,以避开传输过程所引入的以及放大器内部的$\frac{1}{f}$噪声的不利影响。
+\item 利用相敏检测器实现被调制信号的解调过程,可以同时利用频率$\omega_0$和相角$\theta$进行检测,噪声与信号同頻又同相的概率很低。
+\item 用低通滤波器来抑制宽带噪声。电路实现时，低通滤波器的频带可以做得很窄,而且 其频带宽度不受调制频率的影响。
+\end{itemize}
+锁相放大技术需要先对（慢变）信号频谱进行迁移，如\cref{d17}，其调制过程是将低 频信号$V$乘以频率为$\omega_0$的正弦载波,从而将其频谱迁移到调制频率$\omega_0$的附近,之后进行选频放大，这样就不会把$\frac{1}{f}$噪声和低频漂移也放大了,如\cref{d17}(a)所 示，图中的虚线表示$\frac{1}{f}$噪声和白噪声的功率谱密度。经交流放大后，再用相敏检测器将其频谱迁移到直流（$\omega = 0$）的两边，用窄带低通滤波器滤除噪声，在这里加一句废话应该看不见，就得到高信噪比的放大信号，如\cref{d17}(b)所示,图中用虚线表示低通滤波（LPF）的频率响应曲线。只要 LPF 的带宽足够窄,就能有效地改善信噪比。
+\cpicn{0.6}{d17}{锁相放大器对信号频谱进行迁移的过程}
+通过锁相放大技术的过程，相当于一个$Q$值极高的窄带滤波器，可以不受待测频率以外的噪声信号影响，从而使检测系统的性能大为改善。锁相放大器的等效噪声带宽可以达到$0.0001\unit{Hz}$，整体增益可以高达 1010 以上，即把$0.1\unit{nV}$的微弱信号可以放大到$1.0\unit{V}$以上，因而可以测量极其微小的信号。
+\emptyline
+\\
+\textbf{【工作原理】}\par
+锁相放大器的基本结构如\cref{d19}所示的虚线框内，其中信号通道、参考通道为锁相放大器的输入通道，相敏检测器（PSD）和低通滤波器（LPF）等。对于三角函数信号，可直接从信号通道输入（虚线框内的）锁相放大器。对于非三角函数信号或慢信号（如直流信号），它在输入锁相放大器前，需要被与参考信号频率相同的信号所调制（如\cref{d19}虚线框外部分所示)，参考信号既可以是外部输入，也可以是内部自带参考信号源提供。为不失一般性，以下数学推导以需要调制的非三角函数信号为出发点。
+\cpicn{0.4}{d19}{锁相放大器工作原理（虚线框内）}
+\par
+设带噪声的待测信号
+\beq
+f(t)= s(t) + n(t)
+\eeq
+调制并放大$A_I$倍后的信号为
+\beq
+u(t) = A_I f(t) \sin \left(\omega_{0} t+\theta\right) = A_I s(t) \sin \left(\omega_{0} t+\theta\right) + A_I n(t) e\sin \left(\omega_{0} t+\theta\right)
+\eeq
+此时，信号与噪声都被同时放大了。
+\par
+锁相放大器采用参考信号$u_{r}(t)=\sin \left(\omega_{0} t\right)$解调，因调制信号是用参考信号通过某种物理机制触发或用参考信号本身，因此，参考信号与调制信号频率相同、相位差确定。
+\bea
+u_{p}(t)&=u_{r}(t) u_{\mathrm{s}}(t)=A_{I}[s(t)+n(t)] \sin \left(\omega_{0} t+\theta\right) \sin \left(\omega_{0} t\right) \\ &=\frac{1}{2} A_{I}[s(t)+n(t)]\left[\cos \theta-\cos \left(2 \omega_{0} t+\theta\right)\right]
+\eea
+低通滤波后留下了慢变的待测信号和同（低）频噪声：
+\beq
+u_{ox}(t)=\frac{1}{2} A_{I}\left[s(t)+n_{l}(t)\right] \cos \theta
+\eeq
+另一路相位相处$\frac{\pi}{2}$的信号经相同处理后得到
+\beq
+u_{o y}(t)=\frac{1}{2} A_{I}\left[s(t)+n_{l}(t)\right] \sin \theta
+\eeq
+于是被调制后信号（锁相放大器输入端信号）相对于解调信号的相位差
+\beq
+\theta=\arctan\frac{u_{o y}(t)}{u_{o x}(t)}
+\eeq
+输出信号振幅
+\beq
+u_{o}(t)=\sqrt{u_{\mathrm{ox}}^{2}(t)+u_{\mathrm{ov}}^{2}(t)}=\frac{1}{2} A_{I}\left[s(t)+n_{l}(t)\right]
+\eeq
+具有这种两互相垂直的信号输出、获得锁相放大器输入端完整信号能力的锁相放大器被称双相锁相放大器（原理如\cref{d110}），本实验用的OE1022就是双相锁相放大器。
+信号的有效值
+\beq
+R=\sqrt{\frac{\sum_{0}^{N_{r}}\left\{\left[\left(s\left(t_{i}\right)+n\left(t_{i}\right)\right) \cos \left(\omega_{0} t\right)\right]^{2}+\left[(s(t)+n(t)) \sin \left(\omega_{0} t\right)\right]^{2}\right\}}{N_{T}}} \approx \frac{u_{o_{0} p p}(t)}{\sqrt{2} A_{t}}
+\eeq
+则锁相放大器输入信号的$x$、$y$分量分别为：
+\bea \label{measure}
+X&=R \cos \theta \approx \frac{u_{o x_{-} p p}(t)}{\sqrt{2} A_{I}} \\
+Y&=R \sin \theta \approx \frac{u_{o y_{-p p}}(t)}{\sqrt{2} A_{I}}\\
+R&=\sqrt{X^{2}+Y^{2}}
+\eea
+其中$R$、$X$、$Y$和$\theta$就是在锁相放大器屏幕上的显示值，是内部运算的结果；当噪声足够小、且$s(t)$为常量时，$R$为一常量。
+\par
+可见，锁相放大器用相敏检测器实现解调，并且实现既检幅又检相的功能。尽管锁相放大器已滤除了绝大部分噪声，但对同频噪声$n_l (t)$仍无能为力。并且由于放大后的信号仍包含噪声成分，等效于其相位差$\theta$也受随机噪声$n_l (t)$影响，从而存在相位噪声。在实际工作中，我们通常选择频谱中背景噪声最低的频率作为慢变信号的调制频率。\par
+很多应用场合，锁相放大器的参考信号由外部提供（例如光学斩波器，信号发生器），此时叫做外部参考模式。锁相放大器的参考通道就会将外部输入的参考信号进行放大和整形，然后通过锁相环技术，在锁相放大器内部产生一个与外部输入参考信号频率相等、相位差锁定的的正弦信号。这是真的沙包，我不知道我在这里复制粘贴干嘛，可见，锁相的含义是根据外部参考，利用锁相环产生一个频率相同、相位差锁定的参考信号。这个是锁相放大器能够进行后面相敏检测运算的基础。参考通道还有另一功能，即对参考输入进行移相处理,以使各种不同相移信号的检测结果达到最佳。
+\par
+如果采用内部参考模式，也就是锁相放大器自带的 SINE OUT 的正弦信号作为实 验的激励源，由于内部参考信号是锁相放大器自身产生的正弦波(与 SINE OUT 信号同频不同 相)，因此频率及相位不需要锁相环获取，此时也就不用锁相;在这种情况下，由于频率及相 位是直接得到的，不需要放大和整形，测量的精度会更高。
+\par
+
+对于数字锁相放大器 Output 通道的输出信号，对应于原信号$R$或$X$、$Y$分量乘以其逻辑增益。电路实现时，LPF 的频带可以做得很窄,使锁相放大器达到较大的 SNIR。
+\par
+锁相放大器有几个重要参数：灵敏度，最小可测信号 MDS，时间常数，陡降，满刻度输出时的输入电平 FS，过载电平 OVL，输入总动态范围，输出动态范围，动态储备 DR，选频放大。锁相放大器的重要参数，影响着锁相放大器的工作。理解锁相放大器参数的含义及其（配置）对锁相放大器性能的影响，是正确使用锁相放大器的前提。
+\begin{enumerate} 
+\item 灵敏度从直观上来分析就是锁相放大器的当前显示量程，由信号通道的交流放大增益与相敏检波器解调增益决定。
+\item 最小可测信号定义为输出能辨识的最小输入信号，可以理解为系统对小信号的分辨率。影响 MDS 的主要因素有系统的内部噪声、温度漂移等，即结果会受到包括内部噪声、温度漂移的影响而产生波动，MDS 定义为输出可以稳定在一定百分率波动下的最小输入。
+\item 时间常数是低通滤波器$RC$电路的时间常数。可以简单地认为，时间常数越大，阶数越高，输出的带宽就越低，显示的测量幅度、相位等值就越稳定。然而，过大的时间常数会抹平输入信号（随时间）的变化，从而失去有用的信息。因此，在实际应用中，需要根据输入信号随时间变化的情况，协调时间常数与信噪比之间的平衡。
+\item  FS 有时也称为满刻度灵敏度，它是用来表征锁相放大器测量灵敏 度的，拥有电压的量纲，与系统的总增益有关。
+\item OVL 定义为锁相放大器任一级出现过载或临界过载时的输入电平。因为微弱信号检测通常处理的是信噪比较低的输入，所以过载往往出现在噪声电压出现尖峰时。因此，可以将OVL 理解为系统允许的最大输入噪声电压电平，即系统的最大噪声容限。应当指出，通常对应不同的增益设置，各级放大情况将有所不同，其过载电平也会有所不同，故在指明 OVL时，应当附带指出其 FS，这样才有意义。
+\item  在给定 FS 的条件下（即给定的增益设置），锁相放大器的过载电平 OVL 与最小可测信
+ 号 MDS 比值的分贝数
+ \beq
+\text{输入总动态范围} = 20 \mathrm{lg\ } \frac{OVL}{MDS} \unit{dB}
+\eeq
+上文已经介绍，OVL 标称了锁相放大器的噪声容限，而 MDS 表明锁相放大器能够分辨的最小信号。因而输入总动态范围可以理解为锁相放大器从噪声中提取有用信号的能力，即分辨率越高，噪声容限越大，则输入总动态范围越大。
+ \item 该参数定义为满刻度灵敏度 FS 与最小可测信号 MDS 比值的分贝数，即
+ \beq
+ \text{输出动态范围} = 20 \mathrm{lg\ } \frac{FS}{MDS} \unit{dB}
+\eeq
+ 输出动态范围表示锁相放大器可以检测的有用输入信号的动态范围，即输入有效信号可以在该范围内波动而既不会导致锁相放大器不可分辨，也不会导致超过输出的最大范围。
+ \item 动态储备 DR 定义为过载电平 OVL 与满刻度输出时的输入电平 FS 比值的分贝数
+ \beq
+ DR = 20 \mathrm{lg\ } \frac{OVL}{FS} \unit{dB}
+\eeq
+\par
+锁相放大器输入信号在 PSD 处理之前需要交流放大，而在 PSD 处理之后是直流放大信号即可。在总增益不变的情况下，如果调整交流增益增加，直流增益减小，则输入噪声经交流放大很容易使 PSD 过载，动态储备减小，同时输出的直流漂移减小。反之，如果增加直流增益，降低交流增益，则动态储备提高，使锁相放大器具有良好的抗干扰能力，但以输出稳定性为代价，降低了测量精度。\par
+在确定的测量精度要求下，动态储备有最小值。精度要求越高，其最小值就越大。在模拟锁相放大器中，低动态储备意味着更小的输出误差和漂移。在 OE1022 数字锁放中，高动态储备不会增加输出误差和漂移，但是会增加输出噪声。然而，如果在 A/D 转换器前的模拟放大器增益足够大，则其被放大的自身噪声比 A/D 转换器的噪声还大。这样，输出主要受输入噪声影响。因此，增大模拟增益即减小动态储备并不能减小输出噪声。在分辨率要求极高的情况下，增益增大并不能提高信噪比，因此，这时可以降低增益从而提高动态储备\cite{lec}。
+\item 
+ 选频放大对某一段频率或单一频率的信号具有突出的放大作用，而对其他频率的信号具有较强抑
+ 制作用的放大。
+ \end{enumerate}
+\emptyline
+\\
+\textbf{【实验前思考题】}
+\begin{enumerate}
+ \item 请写出拍频信号的数学表达式，并分别用时域和频域图表述出来。
+ \par
+ 拍频信号是将一个低频信号$\omega_l$附加在一个高频信号$\omega_h$上
+ \beq
+ f(t) = a_l \cos \omega_l t + a_h \cos \omega_h t
+ \eeq
+ 傅立叶空间中的表达式为
+ \beq
+ f(\omega) = a_l \delta(\omega - \omega_l) + a+h \delta(\omega - \omega_h)
+ \eeq
+ 图像如\cref{beat,fbeat}。
+ \cpicn{0.6}{beat}{拍频的图像，$a_l = 2$，$\omega_l = 3$，$a_h = 5$，$\omega_h = 60$}
+ \cpicn{0.6}{fbeat}{拍频在傅立叶空间中的表示}
+ 再例如将一个高斯波包附加到高频信号上得到的拍如\cref{gaussbeat}
+ \cpicn{0.6}{gaussbeat}{高斯波包与高频信号形成拍，$\omega_l \sim 5$，$\omega_h - 60$}
+ \item 噪声电压信号是个随机值，原则上，只要时间足够长，其平均值为零。如果待测信号是个恒定值，且环境噪声也是稳定的，则可以通过大量采样平均来获得待测信号值。 然而，实际测量中，信号不是常量，而是（相对）慢变量，而（环境）噪声也不稳定， 这样长时间大量采样平均的方法就不奏效，锁相放大器是个更好的解决方案。为更好的使用锁相放大器，请回答以下问题：
+ \begin{enumerate}
+ \item 如何用锁相放大器检测到待测的直流信号或慢变信号？
+ \par 由于$s(t)$为慢变量，因此可以用锁相放大器按\cref{measure}测量锁相放大器的输出信号随时间的变化，输出信号$u_o(t) \propto s(t) + n_l (t)$，$n_l$为低频噪声，功率谱主要在低频部分。当然，根据输入信号的特征频率大小，进行低通滤波时的截断频率$\omega_c$也需要随着调整大小。
+  \item 如用斩波器调制直流信号（如光强），被斩制后的信号仍然包含有直流分量（即平均值不为零），但该直流分量随交流信号输入锁相放大器后不会被锁相放大器检测，请从数学推导上说明。
+ \par
+ \item 用复数的取代三角函数，将锁相放大器的工作过程描述一遍；
+\par
+待测信号$f(t) = s(t) + n(t)$，调制信号$pe^{i\omega_0 t}$，其中$p\in U(1)$是一个相位因子。调制后的信号
+\beq
+u_m (t) = s(t)pe^{i\omega_0 t} + n(t) pe^{i\omega_0 t}
+\eeq
+放大$A_I$倍得到
+\beq
+u_a(t) = A_Is(t)pe^{i\omega_0 t} + A_I n(t) pe^{i\omega_0 t}
+\eeq
+用参考信号$e^{i\omega_0 t}$解调
+\bea
+u_p(t) &= \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\omega_0 t}\mathrm{Im\ }u_a(t)\\
+&= \frac{1}{2}p^*A_I [s(t)+n(t)] + \frac{1}{2}p A_I[s(t)+n(t)]e^{2i\omega_0t}
+\eea
+低通滤波得到
+\beq
+u_x(t) = \frac{1}{2}p^* A_I[s(t)+n_l(t)]\cos 2\omega_0 t
+\eeq
+用$ie^{i\omega_0 t}$调制得到的结果是
+\bea
+u_y(t) = \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\omega_0 t}\mathrm{Im\ }u_a(t)\\
+&= \frac{1}{2}pA_I [s(t)+n(t)] + \frac{1}{2}p^* A_I[s(t)+n(t)]\cos 2\omega_0 t
+\eea
+
+
+
+ \end{enumerate}
+\end{enumerate}
+
+\newpage%实验记录
+%\cpic{0.255}{e2}%学生信息表格
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
+\hline
+年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
+姓名： & 高寒 & 学号： & 17353019 \\ \hline
+日期： &  & 实验地点： & 珠海教学楼 A102 \\ \hline
+学生签名： &  \includegraphics[scale=0.09]{sign}& 评分： &  \\ \hline
+日期： &  & 教师签名： &  \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\LARGE{\textbf{\ExpeName}}
+\end{center}
+\textbf{【实验内容、步骤、结果】}
+1.\textbf{锁相放大器的基本操作和基本参数——工作原理的体验}\par
+用OE1022 的内部振荡器 SINE OUT输出一个幅值$80\unit{mVrms}$，频率$1\unit{kHz}$的正弦波，并用OE1022测量，按下面步骤进行：
+\begin{enumerate}
+\item 断开所有与机箱连接的信号线，接入电源，打开电源开关，如果系统不是默认设置状态，按讲义18页步骤重设；
+\item 在前面板上选择 REF/PHASE 子菜单，Ref.source 设置为 “Internal”;Ref.frequency 为默认值“1.000kHz”;选择进入“Sine Output”下级菜单，扫描类 型 Sweep Type 设置为“Fixed”，通过数字键盘在 Voltage 中输入“0.08”，得到幅值为 80mVrms、 频率为 1.000kHz 的正弦信号。
+\item 用一条 BNC-BNC 信号线连接 OE1022 前面板 SINE OUT 输出接口和 SIGNAL IN 的 A/I
+ 接口，如\cref{d112}。
+ \cpicn{0.6}{d112}{测量信号连线}
+ \item 观察主界面中监测栏的 Overload 是否提示溢出：在显示屏最下方的Overload右边应显示NONE NONE。若前级输入溢出，则显示 Overload: INPUT NONE;若放大溢出，则显示 Overload: NONE GAIN;若同时溢出，则显示 Overload: INPUT GAIN。若发生前级溢出立即减小数字信号发生器输出幅值。按本实验的设置前级溢出应该不会发生。
+ \item 调节灵敏度值。按下前面板\cref{d114} GAIN/TC 按键进入子菜单。
+ \cpicn{0.6}{d114}{前面板GAIN/TC 菜单位置}
+ \item 如\cref{d115}，按下软键1以选中Sensitivity功能，通过旋转旋钮调节Sensitivity 值，使测量信号值尽量满偏但不超量程，到$100\unit{mV}$左右即可。此时我们测出信号发生器发生的正弦波幅值和相位$A=$\uline{\hspace{2cm}}，相位$\theta = $\uline{\hspace{2cm}}，参考结果见\cref{d115}。
+ \cpicn{0.6}{d115}{GAIN/TC 菜单参数显示}
+
+
+\end{enumerate}
+\textbf{【实验过程中遇到问题记录】}\par
+\cpic{0.81}{none}
+
+%生成最终报告时将上面内容全部删除或注释（用\iffalse \fi），将扫描得到的实验报告保存为Record.pdf在LaTeX model for GPL下，将下行命令的注释号删去。注意根据实际页数调整pages参数。
+%\includepdf[pages=1-3]{Record}
+
+
+\newpage%分析与讨论
+%\cpic{0.255}{e3}%学生信息表格
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
+\hline
+年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
+姓名： & 高寒 & 学号： & 17353019 \\ \hline
+日期： & \today &  &  \\ \hline
+评分： &  & 教师签名： &  \\ \hline
+\end{tabular}
+\end{table}
+\begin{center}
+\LARGE\textbf{{\ExpeName}}
+\end{center}
+\textbf{【分析与讨论】}\\
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{model.bib}
+
+\end{document}
