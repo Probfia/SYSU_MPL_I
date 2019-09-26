@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.19)  26 SEP 2019 11:32
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.19)  26 SEP 2019 16:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -203,8 +203,8 @@ File: ctexopts.cfg 2019/04/07 v2.4.15 Option configuration file (CTEX)
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count173
 \c@section=\count174
@@ -381,6 +381,9 @@ icle (CTEX)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
 File: ctex-name-utf8.cfg 2019/04/07 v2.4.15 Caption with encoding UTF8 (CTEX)
 ))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ctex/ctex-c5size.clo
+File: ctex-c5size.clo 2019/04/07 v2.4.15 c5size option (CTEX)
+)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-mac.def
 File: ctex-fontset-mac.def 2019/04/07 v2.4.15 Mac OS X fonts definition (CTEX)
 
@@ -738,6 +741,10 @@ LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 )
+
+LaTeX Warning: Unused global option(s):
+    [50pt].
+
 (./model.aux)
 \openout1 = `model.aux'.
 
@@ -839,12 +846,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=50.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -884,6 +891,11 @@ LaTeX Info: Redefining \nameref on input line 76.
 
 File: e1.png Graphic file (type bmp)
 <e1.png>
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 81.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 105--108
 
@@ -940,10 +952,11 @@ File: gaussbeat.png Graphic file (type bmp)
 File: sign.jpeg Graphic file (type bmp)
 <sign.jpeg>
 
-Overfull \hbox (26.6633pt too wide) in paragraph at lines 511--512
-[]\TU/SongtiSC(0)/m/n/12 在 前 面 板 上 选 择 \TU/lmr/m/n/12 REF/PHASE \TU/SongtiSC(0)
-/m/n/12 子 菜 单，| \TU/lmr/m/n/12 Ref.source \TU/SongtiSC(0)/m/n/12 设 置 为  |“\TU/l
-mr/m/n/12 Internal\TU/SongtiSC(0)/m/n/12 ”| \TU/lmr/m/n/12 ;Ref.frequency
+Overfull \hbox (25.84872pt too wide) in paragraph at lines 511--512
+[]\TU/SongtiSC(0)/m/n/12.045 在 前 面 板 上 选 择 \TU/lmr/m/n/12.045 REF/PHASE \TU/Son
+gtiSC(0)/m/n/12.045 子 菜 单，| \TU/lmr/m/n/12.045 Ref.source \TU/SongtiSC(0)/m/n/1
+2.045 设 置 为  |“\TU/lmr/m/n/12.045 Internal\TU/SongtiSC(0)/m/n/12.045 ”| \TU/lmr
+/m/n/12.045 ;Ref.frequency
  []
 
 File: d112.png Graphic file (type bmp)
@@ -954,10 +967,10 @@ File: d114.png Graphic file (type bmp)
 File: d115.png Graphic file (type bmp)
 <d115.png>
 
-Overfull \hbox (24.47473pt too wide) in paragraph at lines 518--519
-\TU/SongtiSC(0)/m/n/12 数，|  幅 值 $\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 =$   \TU/So
-ngtiSC(0)/m/n/12 ，|  对 比 得 知 $\OML/cmm/m/it/12 R$ \TU/SongtiSC(0)/m/n/12 的 含 义 
-是|   []   。| 
+Overfull \hbox (22.79837pt too wide) in paragraph at lines 518--519
+\TU/SongtiSC(0)/m/n/12.045 数，|  幅 值 $\OML/cmm/m/it/12.045 A \OT1/cmr/m/n/12.045
+ =$   \TU/SongtiSC(0)/m/n/12.045 ，|  对 比 得 知 $\OML/cmm/m/it/12.045 R$ \TU/Songt
+iSC(0)/m/n/12.045 的 含 义 是|   []   。| 
  []
 
 File: d117.png Graphic file (type bmp)
@@ -984,12 +997,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
-
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 614--615
 
  []
 
-[22]
+
 Overfull \hbox (20.6001pt too wide) in paragraph at lines 625--631
  [][] 
  []
@@ -999,6 +1012,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 652--655
 
  []
 
+[23]
 File: d127.png Graphic file (type bmp)
 <d127.png>
 
@@ -1006,7 +1020,7 @@ Overfull \hbox (19.82417pt too wide) in paragraph at lines 657--657
  [] 
  []
 
-[23] [24]
+[24]
 File: tb21.png Graphic file (type bmp)
 <tb21.png>
  [25] [26]
@@ -1018,22 +1032,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 724--725
  []
 
 (./model.bbl
-Underfull \hbox (badness 4391) in paragraph at lines 25--27
-[]\TU/lmr/m/n/12 D. Tong, “Cosmology,” [][]$[][][][] [] [] [] [][][] [] [][][][
-][] [] [][][] [] [][] [] [][] [] [][][][] [] [][][][] [] [][][][][] []
- []
-
-
-Underfull \hbox (badness 7631) in paragraph at lines 29--32
-[]\TU/SongtiSC(0)/m/n/12 中 山 大 学 物 理 与 天 文 学 院 近 代 物 理 实 验 教 学 团 队\TU/lmr/m/n/1
-2 , “D1 \TU/SongtiSC(0)/m/n/12 锁 相 放
+Underfull \hbox (badness 3838) in paragraph at lines 25--27
+[]\TU/lmr/m/n/12.045 D. Tong, “Cosmology,” [][]$[][][][] [] [] [] [][][] [] [][
+][][][] [] [][][] [] [][] [] [][] [] [][][][] [] [][][][] [] [][][][][] []
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 29--32
-\TU/SongtiSC(0)/m/n/12 大 器 与 弱 信 号 测 量 实 验 讲 义  |（\TU/lmr/m/n/12 2017 \TU/Songt
-iSC(0)/m/n/12 级 用 \TU/lmr/m/n/12 5\TU/SongtiSC(0)/m/n/12 ）|  第 五 版 \TU/lmr/m/n/
-12 20190923,”
+[]\TU/SongtiSC(0)/m/n/12.045 中 山 大 学 物 理 与 天 文 学 院 近 代 物 理 实 验 教 学 团 队\TU/lmr/m
+/n/12.045 , “D1 \TU/SongtiSC(0)/m/n/12.045 锁 相 放
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
+\TU/SongtiSC(0)/m/n/12.045 大 器 与 弱 信 号 测 量 实 验 讲 义  |（\TU/lmr/m/n/12.045 2017 \
+TU/SongtiSC(0)/m/n/12.045 级 用 \TU/lmr/m/n/12.045 5\TU/SongtiSC(0)/m/n/12.045 ）|
+  第 五 版 \TU/lmr/m/n/12.045 20190923,”
  []
 
 
@@ -1053,16 +1067,20 @@ Package rerunfilecheck Info: File `model.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
 
 
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.41063pt have occurred.
+
+
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 730.
  ) 
 Here is how much of TeX's memory you used:
- 27953 strings out of 492916
- 580899 string characters out of 6133345
- 665778 words of memory out of 5000000
- 31732 multiletter control sequences out of 15000+600000
- 538926 words of font info for 73 fonts, out of 8000000 for 9000
+ 27967 strings out of 492916
+ 583100 string characters out of 6133345
+ 665959 words of memory out of 5000000
+ 31744 multiletter control sequences out of 15000+600000
+ 540299 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,73p,810b,533s stack positions out of 5000i,500n,10000p,200000b,80000s
 
