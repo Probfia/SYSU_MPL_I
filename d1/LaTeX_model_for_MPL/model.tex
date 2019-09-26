@@ -10,12 +10,13 @@
 \usepackage{graphicx}
 \usepackage[hmargin=1.25in,vmargin=1in]{geometry}
 \usepackage{pdfpages}
+
 \usepackage[colorlinks,
             linkcolor=red,
 		 urlcolor=black]{hyperref}
-\usepackage{cleveref}
-\usepackage{float}
 
+\usepackage{float}
+\usepackage{cleveref}
 
 \crefname{equation}{}{}
 \crefname{figure}{图}{图}
@@ -181,13 +182,13 @@ s(t) = \sum_n a_n e^{i(n \omega_0 t + \varphi)}
 \beq
 n(t) = \sum_\omega b(\omega) e^{i\omega t}
 \eeq
-其中振幅$b(\omega)$可能是常量（如市频干扰），亦可能是随机量$r(\omega)$；在频域中，随机噪声也可以理解为每一时刻的噪声电压频谱$n(\omega) $都不会是一样的\footnote{拟有误，随机噪声应该理解成一维随机高斯场。}
+其中振幅$b(\omega)$可能是常量（如市频干扰），亦可能是随机量$r(\omega)$；在频域中，随机噪声也可以理解为每一时刻的噪声电压频谱$n(\omega) $都不会是一样的\footnote{拟有误，随机噪声应该理解成一维随机高斯场。}。
 \par
 以上讲义内容都是鬼扯，要理解噪声必须明白随机过程的概念和两点关联函数，功率谱等关键统计量。一段信号$f(t)$的两点关联函数定义为
 \beq
 \xi(t_2,t_1) = \langle f(t_2) f(t_1) \rangle
 \eeq
-根据噪声随时间均匀同性的特点，单点关联函数，即噪声在某点上的期望$\langle \xi(t)\rangle$必须为0；，$\xi(t_2,t_1)$必须只依赖于$|t_2 - t_1|$。记$\xi(|t_2-t_1|) = \xi(t)$，可以求$\xi(t)$的傅立叶变换
+根据噪声随时间均匀同性的特点，单点关联函数，即噪声在某点上的期望$\langle \xi(t)\rangle$必须为0；$\xi(t_2,t_1)$必须只依赖于$|t_2 - t_1|$。记$\xi(|t_2-t_1|) = \xi(t)$，可以求$\xi(t)$的傅立叶变换
 \bea
 \xi(\omega_1,\omega_2) &= \int dt_1 dt_2 e^{i\omega_1 t_1 + i\omega_2 t_2} \xi(t_2,t_1) \\
 &= \int dt dt_2 e^{i\omega_1 (t_2 + t) + i\omega_2 t_2} \xi(t) \\
@@ -291,6 +292,7 @@ SNIR = \frac{\int_{-\infty}^{\infty} d\omega P(\omega)}{\int_{-\infty}^{\omega_c
 \cpicn{0.6}{filter}{$Q$值为 20 的滤波器滤波前后的信号:(a)、(b)分别为滤波前后的时域图;(c)、(d)分别为滤波前后的频域图。}
 \par
 另一种削弱噪声信号的方法为{\bf 零位法}，零位法的本质是比较法测量。一般直接指示型测量仪表的测量方法是将被测信号放大到一定幅度，以驱动表头指针的偏转角度指示被测量的大小;或者经模数转换和数据处理后由液晶显示被测量的数值。而零位法是调整对比量的大小使其尽量接近被测量，由对比量指示被测量的大小，如\cref{d16}所示。图中的零位表指针只用来指示被测量和对比量的差异值，当零位表指示近似为零时，对比量的大小就表征了被测量的大小。对比量的调整可以手动实现，也可闭 环自动调整，如\cref{d16}中虚线所示。用这种方法测量的分辨率取决于对比量的调整和指示的分辨率。用机械测量类比，弹簧秤是一种直接指示仪表，而天平则是一种零位法仪表。
+\cpicn{0.6}{d16}{零位法测量原理}
 \par
 由\cref{d16}可以看出，虽然被测量和对比量在传输过程中分别附加了干扰噪声$n_1(t)$和$n_2(t)$，但是在对比相减的过程中，$n_1(t)$和$n_2(t)$会在一定程度上相互抵消。两路信号传输过程越相似，$n_1(t)$和$n_2(t)$也会越近似，抵消作用越好。因此，与直接指示测量方法相比，零位法测量结果的信噪比更高，测量精度也更高。
 \par
@@ -360,7 +362,7 @@ u_{o}(t)=\sqrt{u_{\mathrm{ox}}^{2}(t)+u_{\mathrm{ov}}^{2}(t)}=\frac{1}{2} A_{I}\
 具有这种两互相垂直的信号输出、获得锁相放大器输入端完整信号能力的锁相放大器被称双相锁相放大器（原理如\cref{d110}），本实验用的OE1022就是双相锁相放大器。
 信号的有效值
 \beq
-R=\sqrt{\frac{\sum_{0}^{N_{r}}\left\{\left[\left(s\left(t_{i}\right)+n\left(t_{i}\right)\right) \cos \left(\omega_{0} t\right)\right]^{2}+\left[(s(t)+n(t)) \sin \left(\omega_{0} t\right)\right]^{2}\right\}}{N_{T}}} \approx \frac{u_{o_{0} p p}(t)}{\sqrt{2} A_{t}}
+R=\sqrt{\frac{\int_{0}^{T}\left\{\left[(s(t)+n(t)) \cos \left(\omega_{0} t\right)\right]^{2}+\left[(s(t)+n(t)) \sin \left(\omega_{0} t\right)\right]^{2}\right\} d t}{T}}
 \eeq
 则锁相放大器输入信号的$x$、$y$分量分别为：
 \bea \label{measure}
@@ -381,16 +383,24 @@ R&=\sqrt{X^{2}+Y^{2}}
 锁相放大器有几个重要参数：灵敏度，最小可测信号 MDS，时间常数，陡降，满刻度输出时的输入电平 FS，过载电平 OVL，输入总动态范围，输出动态范围，动态储备 DR，选频放大。锁相放大器的重要参数，影响着锁相放大器的工作。理解锁相放大器参数的含义及其（配置）对锁相放大器性能的影响，是正确使用锁相放大器的前提。
 \begin{enumerate} 
 \item 灵敏度从直观上来分析就是锁相放大器的当前显示量程，由信号通道的交流放大增益与相敏检波器解调增益决定。
-\item 最小可测信号定义为输出能辨识的最小输入信号，可以理解为系统对小信号的分辨率。影响 MDS 的主要因素有系统的内部噪声、温度漂移等，即结果会受到包括内部噪声、温度漂移的影响而产生波动，MDS 定义为输出可以稳定在一定百分率波动下的最小输入。
+\item 最小可测信号定义为输出能辨识的最小输入信号，可以理解为系统对小信号的分辨率。影响 MDS 的主
+要因素有系统的内部噪声、温度漂移等，即结果会受到包括内部噪声、温度漂移的影响而产
+生波动，MDS 定义为输出可以稳定在一定百分率波动下的最小输入。
 \item 时间常数是低通滤波器$RC$电路的时间常数。可以简单地认为，时间常数越大，阶数越高，输出的带宽就越低，显示的测量幅度、相位等值就越稳定。然而，过大的时间常数会抹平输入信号（随时间）的变化，从而失去有用的信息。因此，在实际应用中，需要根据输入信号随时间变化的情况，协调时间常数与信噪比之间的平衡。
 \item  FS 有时也称为满刻度灵敏度，它是用来表征锁相放大器测量灵敏 度的，拥有电压的量纲，与系统的总增益有关。
-\item OVL 定义为锁相放大器任一级出现过载或临界过载时的输入电平。因为微弱信号检测通常处理的是信噪比较低的输入，所以过载往往出现在噪声电压出现尖峰时。因此，可以将OVL 理解为系统允许的最大输入噪声电压电平，即系统的最大噪声容限。应当指出，通常对应不同的增益设置，各级放大情况将有所不同，其过载电平也会有所不同，故在指明 OVL时，应当附带指出其 FS，这样才有意义。
+\item OVL 定义为锁相放大器任一级出现过载或临界过载时的输入电平。因为微弱信号检测通
+常处理的是信噪比较低的输入，所以过载往往出现在噪声电压出现尖峰时。因此，可以将
+OVL 理解为系统允许的最大输入噪声电压电平，即系统的最大噪声容限。应当指出，通常对
+应不同的增益设置，各级放大情况将有所不同，其过载电平也会有所不同，故在指明 OVL
+时，应当附带指出其 FS，这样才有意义。
 \item  在给定 FS 的条件下（即给定的增益设置），锁相放大器的过载电平 OVL 与最小可测信
  号 MDS 比值的分贝数
  \beq
 \text{输入总动态范围} = 20 \mathrm{lg\ } \frac{OVL}{MDS} \unit{dB}
 \eeq
-上文已经介绍，OVL 标称了锁相放大器的噪声容限，而 MDS 表明锁相放大器能够分辨的最小信号。因而输入总动态范围可以理解为锁相放大器从噪声中提取有用信号的能力，即分辨率越高，噪声容限越大，则输入总动态范围越大。
+上文已经介绍，OVL 标称了锁相放大器的噪声容限，而 MDS 表明锁相放大器能够分辨的
+最小信号。因而输入总动态范围可以理解为锁相放大器从噪声中提取有用信号的能力，即分
+辨率越高，噪声容限越大，则输入总动态范围越大。
  \item 该参数定义为满刻度灵敏度 FS 与最小可测信号 MDS 比值的分贝数，即
  \beq
  \text{输出动态范围} = 20 \mathrm{lg\ } \frac{FS}{MDS} \unit{dB}
@@ -401,8 +411,15 @@ R&=\sqrt{X^{2}+Y^{2}}
  DR = 20 \mathrm{lg\ } \frac{OVL}{FS} \unit{dB}
 \eeq
 \par
-锁相放大器输入信号在 PSD 处理之前需要交流放大，而在 PSD 处理之后是直流放大信号即可。在总增益不变的情况下，如果调整交流增益增加，直流增益减小，则输入噪声经交流放大很容易使 PSD 过载，动态储备减小，同时输出的直流漂移减小。反之，如果增加直流增益，降低交流增益，则动态储备提高，使锁相放大器具有良好的抗干扰能力，但以输出稳定性为代价，降低了测量精度。\par
-在确定的测量精度要求下，动态储备有最小值。精度要求越高，其最小值就越大。在模拟锁相放大器中，低动态储备意味着更小的输出误差和漂移。在 OE1022 数字锁放中，高动态储备不会增加输出误差和漂移，但是会增加输出噪声。然而，如果在 A/D 转换器前的模拟放大器增益足够大，则其被放大的自身噪声比 A/D 转换器的噪声还大。这样，输出主要受输入噪声影响。因此，增大模拟增益即减小动态储备并不能减小输出噪声。在分辨率要求极高的情况下，增益增大并不能提高信噪比，因此，这时可以降低增益从而提高动态储备\cite{lec}。
+锁相放大器输入信号在 PSD 处理之前需要交流放大，而在 PSD 处理之后是直流放大信
+号即可。在总增益不变的情况下，如果调整交流增益增加，直流增益减小，则输入噪声经交流放大很容易使 PSD 过载，动态储备减小，同时输出的直流漂移减小。反之，如果增加直
+流增益，降低交流增益，则动态储备提高，使锁相放大器具有良好的抗干扰能力，但以输出
+稳定性为代价，降低了测量精度。\par
+在确定的测量精度要求下，动态储备有最小值。精度要求越高，其最小值就越大。在模
+拟锁相放大器中，低动态储备意味着更小的输出误差和漂移。在 OE1022 数字锁放中，高动
+态储备不会增加输出误差和漂移，但是会增加输出噪声。然而，如果在 A/D 转换器前的模
+拟放大器增益足够大，则其被放大的自身噪声比 A/D 转换器的噪声还大。这样，输出主要
+受输入噪声影响。因此，增大模拟增益即减小动态储备并不能减小输出噪声。在分辨率要求极高的情况下，增益增大并不能提高信噪比，因此，这时可以降低增益从而提高动态储备\cite{lec}。
 \item 
  选频放大对某一段频率或单一频率的信号具有突出的放大作用，而对其他频率的信号具有较强抑
  制作用的放大。
@@ -411,7 +428,7 @@ R&=\sqrt{X^{2}+Y^{2}}
 \\
 \textbf{【实验前思考题】}
 \begin{enumerate}
- \item 请写出拍频信号的数学表达式，并分别用时域和频域图表述出来。
+ \item {\bf 请写出拍频信号的数学表达式，并分别用时域和频域图表述出来。}
  \par
  拍频信号是将一个低频信号$\omega_l$附加在一个高频信号$\omega_h$上
  \beq
@@ -426,13 +443,20 @@ R&=\sqrt{X^{2}+Y^{2}}
  \cpicn{0.6}{fbeat}{拍频在傅立叶空间中的表示}
  再例如将一个高斯波包附加到高频信号上得到的拍如\cref{gaussbeat}
  \cpicn{0.6}{gaussbeat}{高斯波包与高频信号形成拍，$\omega_l \sim 5$，$\omega_h - 60$}
- \item 噪声电压信号是个随机值，原则上，只要时间足够长，其平均值为零。如果待测信号是个恒定值，且环境噪声也是稳定的，则可以通过大量采样平均来获得待测信号值。 然而，实际测量中，信号不是常量，而是（相对）慢变量，而（环境）噪声也不稳定， 这样长时间大量采样平均的方法就不奏效，锁相放大器是个更好的解决方案。为更好的使用锁相放大器，请回答以下问题：
+ \item {\bf 噪声电压信号是个随机值，原则上，只要时间足够长，其平均值为零。如果待测信号是个恒定值，且环境噪声也是稳定的，则可以通过大量采样平均来获得待测信号值。 然而，实际测量中，信号不是常量，而是（相对）慢变量，而（环境）噪声也不稳定， 这样长时间大量采样平均的方法就不奏效，锁相放大器是个更好的解决方案。为更好的使用锁相放大器，请回答以下问题：}
  \begin{enumerate}
- \item 如何用锁相放大器检测到待测的直流信号或慢变信号？
+ \item {\bf 如何用锁相放大器检测到待测的直流信号或慢变信号？}
  \par 由于$s(t)$为慢变量，因此可以用锁相放大器按\cref{measure}测量锁相放大器的输出信号随时间的变化，输出信号$u_o(t) \propto s(t) + n_l (t)$，$n_l$为低频噪声，功率谱主要在低频部分。当然，根据输入信号的特征频率大小，进行低通滤波时的截断频率$\omega_c$也需要随着调整大小。
-  \item 如用斩波器调制直流信号（如光强），被斩制后的信号仍然包含有直流分量（即平均值不为零），但该直流分量随交流信号输入锁相放大器后不会被锁相放大器检测，请从数学推导上说明。
+  \item {\bf 如用斩波器调制直流信号（如光强），被斩制后的信号仍然包含有直流分量（即平均值不为零），但该直流分量随交流信号输入锁相放大器后不会被锁相放大器检测，请从数学推导上说明。}
  \par
- \item 用复数的取代三角函数，将锁相放大器的工作过程描述一遍；
+
+
+
+ \end{enumerate}
+ 
+ 
+ 
+  \item {\bf 用复数的取代三角函数，将锁相放大器的工作过程描述一遍；}
 \par
 待测信号$f(t) = s(t) + n(t)$，调制信号$pe^{i\omega_0 t}$，其中$p\in U(1)$是一个相位因子。调制后的信号
 \beq
@@ -453,13 +477,10 @@ u_x(t) = \frac{1}{2}p^* A_I[s(t)+n_l(t)]\cos 2\omega_0 t
 \eeq
 用$ie^{i\omega_0 t}$调制得到的结果是
 \bea
-u_y(t) = \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\omega_0 t}\mathrm{Im\ }u_a(t)\\
+u_y(t) &= \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\omega_0 t}\mathrm{Im\ }u_a(t)\\
 &= \frac{1}{2}pA_I [s(t)+n(t)] + \frac{1}{2}p^* A_I[s(t)+n(t)]\cos 2\omega_0 t
 \eea
 
-
-
- \end{enumerate}
 \end{enumerate}
 
 \newpage%实验记录
@@ -480,7 +501,10 @@ u_y(t) = \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\o
 \LARGE{\textbf{\ExpeName}}
 \end{center}
 \textbf{【实验内容、步骤、结果】}
+\\
 1.\textbf{锁相放大器的基本操作和基本参数——工作原理的体验}\par
+1.1 \textbf{测量信号$R$、$\theta$、$X$以及$Y$值，并验证它们之间的关系}
+\par
 用OE1022 的内部振荡器 SINE OUT输出一个幅值$80\unit{mVrms}$，频率$1\unit{kHz}$的正弦波，并用OE1022测量，按下面步骤进行：
 \begin{enumerate}
 \item 断开所有与机箱连接的信号线，接入电源，打开电源开关，如果系统不是默认设置状态，按讲义18页步骤重设；
@@ -491,14 +515,193 @@ u_y(t) = \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\o
  \item 观察主界面中监测栏的 Overload 是否提示溢出：在显示屏最下方的Overload右边应显示NONE NONE。若前级输入溢出，则显示 Overload: INPUT NONE;若放大溢出，则显示 Overload: NONE GAIN;若同时溢出，则显示 Overload: INPUT GAIN。若发生前级溢出立即减小数字信号发生器输出幅值。按本实验的设置前级溢出应该不会发生。
  \item 调节灵敏度值。按下前面板\cref{d114} GAIN/TC 按键进入子菜单。
  \cpicn{0.6}{d114}{前面板GAIN/TC 菜单位置}
- \item 如\cref{d115}，按下软键1以选中Sensitivity功能，通过旋转旋钮调节Sensitivity 值，使测量信号值尽量满偏但不超量程，到$100\unit{mV}$左右即可。此时我们测出信号发生器发生的正弦波幅值和相位$A=$\uline{\hspace{2cm}}，相位$\theta = $\uline{\hspace{2cm}}，参考结果见\cref{d115}。
+ \item 如\cref{d115}，按下软键1以选中Sensitivity功能，通过旋转旋钮调节Sensitivity 值，使测量信号值尽量满偏但不超量程，到$100\unit{mV}$左右即可。此时我们测出信号发生器发生的正弦波幅值$R=$\uline{\hspace{2cm}}，相位$\theta = $\uline{\hspace{2cm}}，参考结果见\cref{d115}。如果$\theta$非$-72.78^\circ$，可以设置REF PHASE调节。此时用示波器读数，幅值$A = $\uline{\hspace{2cm}}，对比得知$R$的含义是\uline{\hspace{6cm}}。
  \cpicn{0.6}{d115}{GAIN/TC 菜单参数显示}
+ \item 主界面数据栏显示$R$、$\theta$、$X$及$Y$值。按下前面板 DISPLAY 按键进入子菜单。
+\item 首先按\cref{d117}中软键 2，使其选中 Top；再按 软键 3 选中 Type，Type 区域此时高亮显示，通过调节旋钮可选择 Chart(XY 坐标)或 Bar(数字百分比)， 我们选择 Chart；再按软键 3 选 Trace，Trace 区域此时高亮显示，通过调节旋钮可选择显示$R$、$\theta$、$X$、$Y$，我们选择$\theta$。然后按下前面板右下角处的 START CONT 按键如\cref{d118}。
+\cpicn{0.6}{d117}{软键选择}
+\cpicn{0.6}{d118}{改变$\theta$设置}
+\item 固定$R=$\uline{\hspace{2cm}}，用REF PHASE改变$\theta$值，按下前面板DISPLAY按键
+进入子菜单，再按软键 1 将 Monitor 设置中从 Setting 切换为 Output，此时监测栏显示$R$、$\theta$、$X$和$Y$的值，如图 D1-20 所示。观测$X,Y$的改变，数据记录如\cref{tab:tb2}。
+
+\begin{table}[H]
+\centering
+
+\begin{tabular}{|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|}
+\hline
+$\theta$ & $0^\circ$ & $15^\circ$ & $30^\circ$ & $45^\circ$ & $60^\circ$ & $75^\circ$ & $90^\circ$ \\ \hline
+$X/{\rm mV}$ &  &  &  &  &  &  &  \\ \hline
+$Y/{\rm mV}$ &  &  &  &  &  &  &  \\ \hline
+\end{tabular}
+
+\caption{$X,Y$随$\theta$的变化\label{tab:tb2}}
+\end{table}
+理论关系为$X= R\cos \theta$，$Y = R\sin \theta$。估算上面的测量结果与理论的吻合程度\uline{\hspace{4cm}}。
+
+
+\item 改变频率值，观测$R,\theta ,X,Y$的变化，可用sweep设置参考信号，记录如\cref{tab:tb3}。
+
+\begin{table}[H]
+\centering
+
+\begin{tabular}{|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|}
+\hline
+$f/{\rm kHz}$ & 1 & 3 & 10 & 30 & 100 \\ \hline
+$X/{\rm mV}$ &  &  &  &  &  \\ \hline
+$Y/{\rm mV}$ &  &  &  &  &  \\ \hline
+$R/{\rm mV}$ &  &  &  &  &  \\ \hline
+$\theta$ &  &  &  &  &  \\ \hline
+\end{tabular}
+
+\caption{$R,\theta ,X,Y$随频率的变化\label{tab:tb3}}
+\end{table}
+
+\item 设置某一参考信号频率，记录其相位差$\theta_0$，然后延长 sine out 到 signal in 的电缆，记录延长电缆后的相位差$\theta_e$，计算$\Delta \theta = \theta_e - \theta_0$如\cref{tab:tb4}。
+\begin{table}[H]
+\centering
+
+\begin{tabular}{|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|}
+\hline
+$f/{\rm kHz}$ & 1 & 3 & 10 & 30 & 100 \\ \hline
+$\theta_0$ &  &  &  &  &  \\ \hline
+$\theta_e$ &  &  &  &  &  \\ \hline
+$\Delta \theta$ &  &  &  &  &  \\ \hline
+\end{tabular}
+
+\caption{观察一米电缆对相位差的影响\label{tab:tb4}}
+\end{table}
+操作时{\red 不要}先将$\theta_0$全部记录完，再记录$\theta_e$，必须在同一频率下记录$\theta_0$和$\theta_e$后再记录下一个频率的数据。
+
 
 
 \end{enumerate}
+\emptyline
+\par
+1.2 \textbf{不同时间常数、陡降、动态储备下观测滤波器效果}
+\par
+现在我们举例使用 OE1022 的内部振荡器 SINE OUT 产生一个幅值为$50\unit{mVrms}$、频率为$1\unit{kHz} $的正弦波，用 OE1022 进行测量并在 Fast channel out 进行输出，本操作指南将简单演示如何调节时间常数（TC）、滤波器陡降（Slope）及动态储备（Reserve），通过锁相放大器的 Fast out 功能及示波器观测滤波器效果。步骤如下:
+\begin{enumerate}
+\item 断开所有与机箱连接的信号线，接入电源，打开电源开关，此时系统处于默认设置状态。
+在前面板上选择 REF/PHASE 子菜单，Ref.source 设置为“Internal”;Ref.frequency 为默认 值“1.000kHz”;选择进入“Sine Output”下级菜单，扫描类型 Sweep Type 设置为“Fixed”，通过数字键盘在 Voltage 中输入“0.05”，得到幅值为 50mVrms、频率为 1.000kHz 的正弦信号。
+\item 用 BNC-BNC 信号线连接 OE1022 前面板 SINE OUT 输出接口和 SIGNAL IN 的 A/I 接口， OE1022 前面板 CH1 接口和示波器输入接口。
+\item 调节灵敏度值，本例中数字信号发生器输出有效值为$50\unit{mVrms}$的正弦波，相位（phase）设置为$60^\circ$，灵敏度设置为$100\unit{mV}$即可。
+\item 按下 OE1022 前面板的 GAIN/TC 按键，调节时间常数和陡降，设置时间常数为$30\unit{\mu s}$，陡 降为$6\unit{dB/oct}$。
+\item 按下 OE1022 前面板 CHANNEL OUTPUT 按键，进入子菜单，在 Output 选项中选择 CH1， 在 Speed 选项中选择 Fast，Source 选项默认为 R(Fast 模式下输出源可选择 R、X、Y， Slow 模式下输出源可选择 R、X、Y、Rh1、Xh1、Yh1、Rh2、Xh2、Yh2、Noise、$\theta$、$\theta$h1、 $\theta$h2)，Offset\&Expand 中默认 Offset 为 0，Expand 为 1，如图\cref{d121}所示。
+\cpicn{0.6}{d121}{Channel out 子菜单设置图}
+\item 在示波器上调节时基、输入通道设置等，可观测到在$30\unit{\mu s}$时间常数和$6\unit{dB/oct}$陡降下
+channel out 输出$R$值波形，如图\cref{d122}所示：
+\cpicn{0.6}{d122}{ Fast 模式下 CH1 输出$R$信号波形（$30\unit{\mu s},\  6\unit{dB/oct}$）}
+示波器所测量的 CH1 输出信号频率与设定信号频率是什么关系？时间常数大小对此有何影响？为什么？\footnote{参考实验讲义24页下方。}
+\vspace{5cm}
+
+\item 在 OE1022 的 Channel out 菜单中设置 Source 为 X、Y，在示波器上观测。
+\item 在 OE1022 的 Gain/TC 菜单中，对时间常数进行改变，时间常数可选择 $10\unit{\mu s}$、$30\unit{\mu s}$、$100\unit{\mu s}$、 $300\unit{\mu s}$......$10\unit s$、$30\unit s$，通过增大时间常数的值能够使系统的输出端更稳定，也能减轻输入端 噪声对输出端的影响。时间常数除了对系统的稳定性和精度有影响外，还会影响系统的响 应时间，时间常数还决定噪声测量时的等效噪声带宽(ENBW)。在此特别说明一下，等效 噪声带宽指的并不是滤波器的-3 dB 带宽，它指的是对高斯噪声10的有效带宽。观察示波器波形，时间常数为\uline{\hspace{2cm}}个信号周期时，才能观察到稳定的直流输出。
+定性记录并简单分析波形变化：\footnote{参考讲义26页。}
+\vspace{5cm}
+\item 在 OE1022 的 Gain/TC 菜单中，对滤波器陡降进行改变。在同样的测量准确度下，分别选择 6dB/oct、12dB/oct、18dB/oct、24dB/oct 四档，在 TC 不大于 30$\unit{\mu s}$的情况下，观察并定性记录示波器波形的变化：
+\vspace{5cm}
+
+
+\end{enumerate}
+\emptyline
+\par
+1.3 \textbf{制定方案，观测不同时间常数下，输出信号对输入信号变化的响应}
+\par
+改变 SINE OUT 幅值设定，用“START CONT”激活 chart 图以观察改变前后的曲线来确定其输出响应，并记录图形。
+\par
+在 OE1022 的 Gain/TC 菜单中，对滤波器陡降进行改变。在同样的测量准确度下，分别选择 6dB/oct、12dB/oct、18dB/oct、24dB/oct 四档，观察在输入信号改变时，输出信号对输入信号变化的响应；并理解滤波器陡降的作用。图形由示波器屏幕图像给出，实验过程中定性观测到的现象记录如下：
+\vspace{5cm}
+\emptyline
+\par
+1.4 \textbf{外部输入参考信号}
+\par
+用信号发生器产生正弦信号作为外部参考信号（外部参数信号要求峰值 100mV 以上），并用三通将信号用 BNC 线分别接入 REF IN，和 signal in 的 A/I，在锁相放大器参数设置 Ref.source->external。
+\par
+外部参考信号峰值$V_p = $\uline{\hspace{2cm}}，重复1.1部分的测量，记录数据如\cref{tab:tb6}。
+
+\begin{table}[H]
+\centering
+
+\begin{tabular}{|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|}
+\hline
+$\theta$ & $0^\circ$ & $15^\circ$ & $30^\circ$ & $45^\circ$ & $60^\circ$ & $75^\circ$ & $90^\circ$ \\ \hline
+$X/{\rm mV}$ &  &  &  &  &  &  &  \\ \hline
+$Y/{\rm mV}$ &  &  &  &  &  &  &  \\ \hline
+\end{tabular}
+
+\caption{$X,Y$随$\theta$的变化\label{tab:tb6}}
+\end{table}
+理论关系为$X= R\cos \theta$，$Y = R\sin \theta$。估算上面的测量结果与理论的吻合程度\uline{\hspace{4cm}}。改变频率值，观测$R,\theta ,X,Y$的变化，可用sweep设置参考信号，记录如\cref{tab:tb7}。
+
+\begin{table}[H]
+\centering
+
+\begin{tabular}{|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|p{15mm}|}
+\hline
+$f/{\rm kHz}$ & 1 & 3 & 10 & 30 & 100 \\ \hline
+$X/{\rm mV}$ &  &  &  &  &  \\ \hline
+$Y/{\rm mV}$ &  &  &  &  &  \\ \hline
+$R/{\rm mV}$ &  &  &  &  &  \\ \hline
+$\theta$ &  &  &  &  &  \\ \hline
+\end{tabular}
+
+\caption{$R,\theta ,X,Y$随频率的变化\label{tab:tb7}}
+\end{table}
+根据测量结果，回答：对于 OE1022 锁相放大器的信号处理质量，用内部参考信号好还是外部参考信号好?
+\vspace{2cm}
+\emptyline
+\\
+2.\textbf{强噪声背景下的弱信号检测——应用体验}
+\par
+本部分实验的主要目的是理解锁相放大技术的基本原理及使用技能，掌握利用相关性原理提取深埋于强噪声中的微弱信号，原理图如\cref{d127}。
+\cpicn{0.6}{d127}{强噪声背景检测弱信号实验原理图}
+教学实验箱自带 100m Vrms 的白噪声发生器，实验箱内部电路利用双极性晶体管散粒噪声 的功率特性来产生白噪声；通过拨码器选择可以得到 100 mVrms、10 mVrms、1 mVrms 的白噪声信号，分别对应 0dB（1 倍）、20dB（10 倍）、40dB（100 倍）的衰减。由锁相放大器 OE1022 的 SINE OUT 以及外部的 80dB（10000 倍）信号衰减器，可以得到 100nVrms 到 5Vrms 的正弦信号。通过运放把两路信号相加得到不同信噪比的信号，然后由锁相放大器对此信号进行提取测量。
+\par
+实验按如下步骤进行：
+\begin{enumerate}
+\item 用示波器观察教学实验箱噪声发生器输出的噪声是否白噪声？记录时域和频域的图谱来说明。
+\item 不同的噪声水平下，考察 OE1022 如何选用合适的动态储备测量信号?
+\par
+在 OE1022 的 Gain/TC 菜单中，对动态储备进行设置，可设置为 Low、High、Normal 三档之一。动态储备表示锁相放大器对噪声容忍程度的大小，OE1022 动态储备可大于 100 dB，高的动态储备会产生输出噪声和漂移，当动态储备较高时，由于模数转换器的噪声存在导致输出误差增加。由于所有的信号源都存在本底噪声，固在 PSD 提取信号过程中就会掺杂着噪声，如果噪声很大，在高动态储备测量中就会产生较大的输出误差。如果 外部噪声较小，则其输出主要是受 OE1022 自身噪声影响。这时可以通过降低动态储备和直流增益可以减小输出误差。因此，在实际应用中应尽量使用低动态储备。默认配置下系统会根据输入信号的 R 值自动调整所需要的最小动态范围。观察示波器波形变化，给出结论如下：
+\vspace{5cm}
+\item 比较 OE1022 与示波器对不同信号强度和信噪比的测量结果：
+\begin{enumerate}
+\item 使用 OE1022 产生频率 1 kHz，幅值为 100 mVrms（0.282Vpp）的正弦波信号;
+\item 对锁相放大器 OE1022 进行以下设置：
+	\begin{enumerate}
+	\item 进入 INPUT FLTERS 菜单，设置 Source 为 A;
+	\item 进入 GAIN TC 菜单，设置 Sensitivity 为 500 mV，Reserve 为 Normal，Time Constant 为 1 s，Filter dB/oct 为 24 dB；
+	\item 进入 REF PHASE 菜单，设置 Ref. source 为 Internal；
+	\end{enumerate}
+\item 使用 BNC-BNC 信号线连接 OE1022 的“SINE OUT”接口与实验箱本实验框图中的
+“VIN”接口；
+\item 通过分线器，使用 BNC-BNC 信号线将实验箱本实验框图中的“VOUT”接口分别连接
+到 OE1022 的“A/I”接口、和示波器输入端；
+\item 读取 OE1022 测到的 R 值，即为被噪声信号淹没的正弦信号有效值；
+\item 改变 OE1022 产生正弦波有效值，在不同信噪比下重复上述测量；将实验测得波形图、R 值记录在表\cref{tab:tb21}中，作实验结果分析。
+\end{enumerate}
+\end{enumerate}
+注意：用三通将输出信号分别连接到锁相放大器的输入端(A/I)和示波器的输入端；在用示波器观察、记录时，请注意屏幕水平轴范围应达到待观察信号的若干周期。
+\begin{table}[H]
+
+\cpic{0.42}{tb21}
+
+\caption{强噪声背景检测弱信号实验结果\label{tab:tb21}}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+\newpage
+
 \textbf{【实验过程中遇到问题记录】}\par
 \cpic{0.81}{none}
-
 %生成最终报告时将上面内容全部删除或注释（用\iffalse \fi），将扫描得到的实验报告保存为Record.pdf在LaTeX model for GPL下，将下行命令的注释号删去。注意根据实际页数调整pages参数。
 %\includepdf[pages=1-3]{Record}
 

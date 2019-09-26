@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.19)  26 SEP 2019 11:32
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.19)  26 SEP 2019 10:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -716,14 +716,6 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip77
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count304
-\float@exts=\toks24
-\float@box=\box61
-\@float@everytoks=\toks25
-\@floatcapt=\box62
-)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
@@ -738,87 +730,95 @@ LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 )
-(./model.aux)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count304
+\float@exts=\toks24
+\float@box=\box61
+\@float@everytoks=\toks25
+\@floatcapt=\box62
+) (./model.aux)
 \openout1 = `model.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
- ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 73.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 76.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 76.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 76.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 76.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 76.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 76.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 76.
-LaTeX Font Info:    Redeclaring math accent \check on input line 76.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 76.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 76.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 76.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 76.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 76.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 73.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 73.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 73.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 73.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 73.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 73.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 73.
+LaTeX Font Info:    Redeclaring math accent \check on input line 73.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 73.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 73.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 73.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 73.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 76.
+(Font)              `operators' in the math version `normal' on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 76.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 73.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 76.
+(Font)              `operators' in the math version `bold' on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 76.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 76.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 76.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 76.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 76.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 76.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 76.
+(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 76.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 76.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 76.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -864,7 +864,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
 
 )
-Package hyperref Info: Link coloring ON on input line 76.
+Package hyperref Info: Link coloring ON on input line 73.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -874,9 +874,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count305
 )
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
 
 (./model.out) (./model.out)
 \@outlinefile=\write3
@@ -885,185 +885,201 @@ LaTeX Info: Redefining \nameref on input line 76.
 File: e1.png Graphic file (type bmp)
 <e1.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 
  []
 
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 2>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 2>
 [1
 
-] [2]
-File: t1.png Graphic file (type bmp)
-<t1.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
-
- []
-
-[3] [4] [5] [6]
-File: filter.png Graphic file (type bmp)
-<filter.png>
+]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 2>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 2>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 2>
+ [2]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 3>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 3>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 3>
+ [3]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 4>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 4>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 4>
+ [4]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 5>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 5>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 5>
+ [5]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 6>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 6>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 6>
+ [6]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 7>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 7>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 7>
  [7]
-File: d16.png Graphic file (type bmp)
-<d16.png>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 8>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 8>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 8>
  [8]
-File: d17.png Graphic file (type bmp)
-<d17.png>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 9>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 9>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 9>
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 326--328
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 10>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 10>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 10>
+ [10]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 11>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 11>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 11>
+ [11]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 12>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 12>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 12>
+ [12]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 13>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 13>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 13>
+ [13]
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 14>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 14>
+File: preview.pdf Graphic file (type pdf)
+<use preview.pdf, page 14>
+ [14]
+File: fit_lin.png Graphic file (type bmp)
+<fit_lin.png>
+File: os1.jpeg Graphic file (type bmp)
+<os1.jpeg>
+ [15]
+File: os2.jpeg Graphic file (type bmp)
+<os2.jpeg>
+File: os3.jpeg Graphic file (type bmp)
+<os3.jpeg>
+ [16]
+File: os4.jpeg Graphic file (type bmp)
+<os4.jpeg>
+File: os6.jpeg Graphic file (type bmp)
+<os6.jpeg>
+ [17]
+File: os5.jpeg Graphic file (type bmp)
+<os5.jpeg>
 
- []
-
-File: d19.png Graphic file (type bmp)
-<d19.png>
-[10]
-
-LaTeX Warning: Reference `d110' on page 1 undefined on input line 362.
-
-[11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 427--430
-
- []
-
-File: beat.png Graphic file (type bmp)
-<beat.png>
-File: fbeat.png Graphic file (type bmp)
-<fbeat.png>
-[14]
-File: gaussbeat.png Graphic file (type bmp)
-<gaussbeat.png>
- [15] [16]
-File: sign.jpeg Graphic file (type bmp)
-<sign.jpeg>
-
-Overfull \hbox (26.6633pt too wide) in paragraph at lines 511--512
-[]\TU/SongtiSC(0)/m/n/12 在 前 面 板 上 选 择 \TU/lmr/m/n/12 REF/PHASE \TU/SongtiSC(0)
-/m/n/12 子 菜 单，| \TU/lmr/m/n/12 Ref.source \TU/SongtiSC(0)/m/n/12 设 置 为  |“\TU/l
-mr/m/n/12 Internal\TU/SongtiSC(0)/m/n/12 ”| \TU/lmr/m/n/12 ;Ref.frequency
- []
-
-File: d112.png Graphic file (type bmp)
-<d112.png>
-File: d114.png Graphic file (type bmp)
-<d114.png>
-[17]
-File: d115.png Graphic file (type bmp)
-<d115.png>
-
-Overfull \hbox (24.47473pt too wide) in paragraph at lines 518--519
-\TU/SongtiSC(0)/m/n/12 数，|  幅 值 $\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 =$   \TU/So
-ngtiSC(0)/m/n/12 ，|  对 比 得 知 $\OML/cmm/m/it/12 R$ \TU/SongtiSC(0)/m/n/12 的 含 义 
-是|   []   。| 
- []
-
-File: d117.png Graphic file (type bmp)
-<d117.png>
-File: d118.png Graphic file (type bmp)
-<d118.png>
 [18]
-Overfull \hbox (20.6001pt too wide) in paragraph at lines 530--536
- [][] 
- []
+File: os7.jpeg Graphic file (type bmp)
+<os7.jpeg>
+ [19]
+File: ls1.jpeg Graphic file (type bmp)
+<ls1.jpeg>
+File: ls2.jpeg Graphic file (type bmp)
+<ls2.jpeg>
+ [20]
+File: ren_cur.png Graphic file (type bmp)
+<ren_cur.png>
+File: rough_ls.png Graphic file (type bmp)
+<rough_ls.png>
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 578--579
-
- []
-
-File: d121.png Graphic file (type bmp)
-<d121.png>
-[20]
-File: d122.png Graphic file (type bmp)
-<d122.png>
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 606--607
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 614--615
-
- []
-
-[22]
-Overfull \hbox (20.6001pt too wide) in paragraph at lines 625--631
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 652--655
-
- []
-
-File: d127.png Graphic file (type bmp)
-<d127.png>
-
-Overfull \hbox (19.82417pt too wide) in paragraph at lines 657--657
+Overfull \hbox (4.54211pt too wide) in paragraph at lines 221--221
  [] 
  []
 
-[23] [24]
-File: tb21.png Graphic file (type bmp)
-<tb21.png>
- [25] [26]
-File: none.jpeg Graphic file (type bmp)
-<none.jpeg>
- [27]
-Underfull \hbox (badness 10000) in paragraph at lines 724--725
+[21]
+File: smooth_ls.png Graphic file (type bmp)
+<smooth_ls.png>
+
+Overfull \hbox (45.64087pt too wide) in paragraph at lines 223--223
+ [] 
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 257--260
 
  []
 
-(./model.bbl
-Underfull \hbox (badness 4391) in paragraph at lines 25--27
-[]\TU/lmr/m/n/12 D. Tong, “Cosmology,” [][]$[][][][] [] [] [] [][][] [] [][][][
-][] [] [][][] [] [][] [] [][] [] [][][][] [] [][][][] [] [][][][][] []
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--267
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+File: abs_cur.png Graphic file (type bmp)
+<abs_cur.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
+
  []
 
 
-Underfull \hbox (badness 7631) in paragraph at lines 29--32
-[]\TU/SongtiSC(0)/m/n/12 中 山 大 学 物 理 与 天 文 学 院 近 代 物 理 实 验 教 学 团 队\TU/lmr/m/n/1
-2 , “D1 \TU/SongtiSC(0)/m/n/12 锁 相 放
+Underfull \hbox (badness 10000) in paragraph at lines 301--304
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--32
-\TU/SongtiSC(0)/m/n/12 大 器 与 弱 信 号 测 量 实 验 讲 义  |（\TU/lmr/m/n/12 2017 \TU/Songt
-iSC(0)/m/n/12 级 用 \TU/lmr/m/n/12 5\TU/SongtiSC(0)/m/n/12 ）|  第 五 版 \TU/lmr/m/n/
-12 20190923,”
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--32
-[][]$[][][][] [] [] [] [][][][][][][][][][][] [] [][][][] [] [][][] [] [][] [] 
-[][][] [] [][][] [] [][][][][] [] [][][] [] [][][][][] [] [][][][][][][] []
- []
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 730.
- [28]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 730.
+[24] (./model.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 342.
+ [25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 342.
  (./model.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 730.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 730.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 342.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 342.
 Package rerunfilecheck Info: File `model.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 730.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 342.
  ) 
 Here is how much of TeX's memory you used:
- 27953 strings out of 492916
- 580899 string characters out of 6133345
- 665778 words of memory out of 5000000
- 31732 multiletter control sequences out of 15000+600000
- 538926 words of font info for 73 fonts, out of 8000000 for 9000
+ 27711 strings out of 492916
+ 566854 string characters out of 6133345
+ 659437 words of memory out of 5000000
+ 31496 multiletter control sequences out of 15000+600000
+ 537789 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,13n,73p,810b,533s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,18n,73p,810b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on model.pdf (28 pages).
+Output written on model.pdf (25 pages).

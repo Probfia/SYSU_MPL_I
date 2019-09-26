@@ -21,13 +21,29 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{cosmo}
-D.~Tong, ``Cosmology,''
-  \url{http://www.damtp.cam.ac.uk/user/tong/cosmo/cosmo.pdf}.
+\bibitem{error}
+费业泰, \emph{误差理论与数据处理 第7版}.\hskip 1em plus 0.5em
+  minus 0.4em\relax 机械工业出版社.
 
 \bibitem{lec}
-中山大学物理与天文学院近代物理实验教学团队, ``D1
-  锁相放大器与弱信号测量实验讲义（2017级用5）第五版20190923,''
-  \url{http://lovephysics.sysu.edu.cn/lib/exe/fetch.php?media=courses:modernphysicslabzhuhai:lecture-d1-2017.pdf}.
+中山大学物理与天文学院近代物理实验教学团队, ``实验d4-1
+  电子自旋共振实验,''
+  \url{http://lovephysics.sysu.edu.cn/lib/exe/fetch.php?media=courses:modernphysicslabzhuhai:lecture-d4-1-2017.pdf}.
+
+\bibitem{dtem}
+D.~Tong, ``Electromagnetism,''
+  \url{http://www.damtp.cam.ac.uk/user/tong/em/electro.pdf}.
+
+\bibitem{ced}
+Probfia, ``Classical electrodynamic,''
+  \url{https://github.com/Probfia/Notes/blob/master/ced/ced.pdf}.
+
+\bibitem{atom}
+杨福家, \emph{原子物理学 第2版}.\hskip 1em plus 0.5em minus
+  0.4em\relax 高等教育出版社.
+
+\bibitem{dtaqm}
+D.~Tong, ``Applications of quantum mechanics,''
+  \url{http://www.damtp.cam.ac.uk/user/tong/aqm/aqm.pdf}.
 
 \end{thebibliography}
