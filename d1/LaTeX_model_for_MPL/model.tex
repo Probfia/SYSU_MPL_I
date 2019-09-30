@@ -549,6 +549,17 @@ u_y(t) &= \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\
 &= \frac{1}{2}pA_I [s(t)+n(t)] + \frac{1}{2}p^* A_I[s(t)+n(t)]\cos 2\omega_0 t
 \eea
 
+\item {\bf 用傅立叶变换描述滤波过程;帮助理解图 D1-5（时域与频域）背后的数学。【示波器带快速傅立叶变换（FFT）功能：MATH→操作（选 FFT）】}
+\par
+利用scipy自带的FFT函数也可以实现滤波功能，下面是将一个$f=8\unit{Hz}$的正弦信号和一个$f=20\unit{Hz}$的正弦信号加上一系列噪声混合后进行滤波的代码\cref{fft1}和最终结果\cref{fft2}。
+\cpicn{0.6}{fft1}{将一个$f=8\unit{Hz}$的正弦信号和一个$f=20\unit{Hz}$的正弦信号加上一系列噪声混合后进行滤波的代码实现}
+\cpicn{1}{fft2}{将一个$f=8\unit{Hz}$的正弦信号和一个$f=20\unit{Hz}$的正弦信号加上一系列噪声混合后进行滤波的最终结果}
+\par
+为了进一步观察滤波的作用，用\cref{fft}所示的代码作出其傅立叶变换$F(f)$如\cref{fft4}。
+\cpicn{0.6}{fft}{作滤波前后频谱的代码}
+\cpicn{1}{fft4}{滤波前后的频谱}
+可以看到，滤波后，高频信号和高频白噪声都被大幅滤去。
+
 \end{enumerate}
 
 \newpage%实验记录
