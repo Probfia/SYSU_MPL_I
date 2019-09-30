@@ -11,46 +11,50 @@ Database file #1: model.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in error
+Warning--empty year in prob
+Warning--empty year in mpl
 
 Done.
-You've used 2 entries,
+You've used 11 entries,
             4087 wiz_defined-function locations,
-            829 strings with 7629 characters,
-and the built_in function-call counts, 752 in all, are:
-= -- 45
-> -- 8
-< -- 0
-+ -- 4
-- -- 2
-* -- 35
-:= -- 141
-add.period$ -- 4
-call.type$ -- 2
-change.case$ -- 2
-chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 60
-empty$ -- 73
-format.name$ -- 2
-if$ -- 148
+            865 strings with 8462 characters,
+and the built_in function-call counts, 4260 in all, are:
+= -- 308
+> -- 61
+< -- 11
++ -- 32
+- -- 13
+* -- 146
+:= -- 734
+add.period$ -- 22
+call.type$ -- 11
+change.case$ -- 8
+chr.to.int$ -- 24
+cite$ -- 14
+duplicate$ -- 349
+empty$ -- 440
+format.name$ -- 14
+if$ -- 955
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 14
-newline$ -- 29
-num.names$ -- 2
-pop$ -- 38
+int.to.str$ -- 11
+missing$ -- 71
+newline$ -- 56
+num.names$ -- 11
+pop$ -- 193
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 56
+skip$ -- 358
 stack$ -- 0
-substring$ -- 2
-swap$ -- 30
-text.length$ -- 0
+substring$ -- 64
+swap$ -- 198
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 2
-warning$ -- 0
-while$ -- 2
-width$ -- 3
-write$ -- 36
+type$ -- 11
+warning$ -- 3
+while$ -- 15
+width$ -- 13
+write$ -- 103
+(There were 3 warnings)

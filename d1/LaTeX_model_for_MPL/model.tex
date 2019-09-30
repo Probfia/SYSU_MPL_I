@@ -4,6 +4,9 @@
 
 %在下面补全实验名，例如 实验BB3 光电效应实验。
 \newcommand{\ExpeName}{实验D1 锁相放大器与弱信号测量}
+%学生名字和学号
+\newcommand{\Stuname}{高寒}
+\newcommand{\StuID}{17353019}
 
 \usepackage{fancyhdr}
 \usepackage{amsmath}
@@ -81,14 +84,14 @@
 \begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
 \hline
 年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
-姓名： & 高寒 & 学号： & 17353019 \\ \hline
+姓名： & \Stuname & 学号： & \StuID \\ \hline
 日期： & \today & 教师签名： &  \\ \hline
 \end{tabular}
 \end{table}
 \begin{center}
-\LARGE\textbf{{\ExpeName}}
+{\LARGE\textbf{{\ExpeName}}}
 \end{center}
-\large{\bf【实验报告注意事项】}
+{\large \bf【实验报告注意事项】}
 \begin{enumerate}
  \item 实验报告由三部分组成：
  \begin{enumerate}
@@ -113,7 +116,7 @@ A \LaTeX \ model for Modern Phys. Lab., SPA, SYSU by \em{\href{https://www.weibo
 \end{flushright}
 
 \newpage
-\large{\bf【实验安全注意事项】}{\red
+{\large{\bf【实验安全注意事项】}}{\red
 \begin{enumerate}
 \item OE1022 锁相放大器输入端不能接入强信号;接入信号需限定在$1\unit V$以下。
 \item OE4004 稳流源的电流输出不能直接接入 OE1022 锁相放大器的输入端。
@@ -123,7 +126,7 @@ A \LaTeX \ model for Modern Phys. Lab., SPA, SYSU by \em{\href{https://www.weibo
 \newpage
 \newpage%预习报告
 \begin{center}
-\LARGE{\textbf{\ExpeName}}
+{\LARGE{\textbf{\ExpeName}}}
 \end{center}
 \textbf{【实验目的】}
 \begin{enumerate}
@@ -147,7 +150,7 @@ A \LaTeX \ model for Modern Phys. Lab., SPA, SYSU by \em{\href{https://www.weibo
 \emptyline
 \\
 \textbf{【原理概述】}\par
-现代测量中，所有的物理最终都转换为电压或光强进行记录和处理，我们称之为携带被测量物理量信息的电或光信号；然而所有的测量，即使完全由机器自动进执行，结果都不可避免地引入待测量以外的其他信息，如环境干扰、不确定等，在所测量的信号不可避免地携带了噪声。测量结果（信号$x(t)$）可以视作被测量信号$s(t)$与噪声$n(t)$的叠加$x(t) = s(t) + n(t) $。
+现代测量中，所有的物理最终都转换为电压或光强进行记录和处理，我们称之为携带被测量物理量信息的电或光信号；然而所有的测量，即使完全由机器自动进执行，结果都不可避免地引入待测量以外的其他信息，如环境干扰、不确定等，在所测量的信号不可避免地携带了噪声\cite{pulch2013sensitivity,error}。测量结果（信号$x(t)$）可以视作被测量信号$s(t)$与噪声$n(t)$的叠加$x(t) = s(t) + n(t) $。
 \par
 一般来说，信号是运载信息的工具，是信息的载体。任何携带某个现象属性或行为信息的物理量都可以作为信号，如光信号、声信号和电信号等。物理世界中的信号都是有规律地随时间或空间变化的。数学上以函数的形式$x(t)$描述信号。
 \par
@@ -184,7 +187,7 @@ n(t) = \sum_\omega b(\omega) e^{i\omega t}
 \eeq
 其中振幅$b(\omega)$可能是常量（如市频干扰），亦可能是随机量$r(\omega)$；在频域中，随机噪声也可以理解为每一时刻的噪声电压频谱$n(\omega) $都不会是一样的\footnote{拟有误，随机噪声应该理解成一维随机高斯场。}。
 \par
-以上讲义内容都是鬼扯，要理解噪声必须明白随机过程的概念和两点关联函数，功率谱等关键统计量。一段信号$f(t)$的两点关联函数定义为
+以上讲义内容都是鬼扯，要理解噪声必须明白随机过程的概念和两点关联函数，功率谱等关键统计量。一段信号$f(t)$的两点关联函数\cite{prob}定义为
 \beq
 \xi(t_2,t_1) = \langle f(t_2) f(t_1) \rangle
 \eeq
@@ -207,7 +210,7 @@ P(\omega)= \int dt \xi(t) e^{i\omega t}
 P(\omega) = \int_{t>0} \xi(t) \cos \omega t
 \eeq
 可以立刻看出$P(\omega) = P(-\omega)$，于是实际问题中通常只讨论$\omega>0$的部分。\par
-现在傅立叶空间中的两点关联函数可以写成
+现在傅立叶空间中的两点关联函数\cite{cosmo,dtsft}可以写成
 \beq
 \xi(\omega_2,\omega_1) = 2\pi \delta(\omega_1 + \omega_2) P(\omega_1)
 \eeq
@@ -448,11 +451,76 @@ OVL 理解为系统允许的最大输入噪声电压电平，即系统的最大�
  \item {\bf 如何用锁相放大器检测到待测的直流信号或慢变信号？}
  \par 由于$s(t)$为慢变量，因此可以用锁相放大器按\cref{measure}测量锁相放大器的输出信号随时间的变化，输出信号$u_o(t) \propto s(t) + n_l (t)$，$n_l$为低频噪声，功率谱主要在低频部分。当然，根据输入信号的特征频率大小，进行低通滤波时的截断频率$\omega_c$也需要随着调整大小。
   \item {\bf 如用斩波器调制直流信号（如光强），被斩制后的信号仍然包含有直流分量（即平均值不为零），但该直流分量随交流信号输入锁相放大器后不会被锁相放大器检测，请从数学推导上说明。}
- \par
-
+ \par 被斩波器调制后的直流信号仍然含有直流分量，也就是说，这个时候，被调制后的 信号可以写成如下形式
+ \beq
+ u_{m}(t)=x(t) \sin \left(\omega_{0} t+\theta\right)+C
+ \eeq
+ $C$即直流分量。之后，信号被锁相放大器放大，并经过$\sin(\omega_0 t)$解调，信号变为
+ \beq
+ u_{p}(t)=A_{l} x(t) \sin \left(\omega_{0} t+\theta\right) \sin \left(\omega_{0} t\right)+A_{l} C \sin \left(\omega_{0} t\right)
+ \eeq
+然后，信号会被低通滤波，由于$\omega_0$（参考信号的频率）相对于截止频率是高频，所以会被低通滤波器滤除掉，因此，这部分直流分量不会被锁相放大器检测到。
 
 
  \end{enumerate}
+ \item {\bf 相位角以及相位差的含义是什么?锁相放大器输出的$\theta$是待测信号的相位角还是待测信号与参考信号之间的相位差?}\par
+相位角和相位差是两个完全不同的概念。首先，我们来解释一下相位角。
+\par
+查阅百度百科\cite{phasebaidu}，了解到相位角又称相位，所以相位角其实就是我们平时经常提及的相位，它表 征了某一时刻，信号所处的状态。\par
+例如，一个三角函数信号可以写为如下形式
+\beq
+x(t)=\operatorname{arccos}(\omega t+\varphi)
+\eeq
+在这个信号当中，$\omega t + \varphi$就是这个信号的相位角。当我们知道了相位角后，我们就知道了在这一时刻，信号的大小，所以我们就知道了信号所处的状态。
+\par
+又例如，我们可以用复数来表示一个三角函数信号，即
+\beq
+x^{\prime}(t)=a e^{i(\omega t+\varphi)}
+\eeq
+在上述表达式中，$𝑎$是复数的模，$\omega 𝑡 + \varphi$是这个复数的辐角，即我们已经提及的相位角。从这个角度，我们也可以理解，为什么我们称其为相位角。
+\par
+当然，很多时候，我们并不关心某个信号的相位角是多少，一方面是因为，如果信号变化的频率很快（例如光的频率是$10^{15}\unit{Hz}$量级），这个时候，整个相位角也随时间快速变化，所以我们很难准确知道信号在某一时刻的相位角是多少。另一方面，相位角总是相对的，因为初相位可以任意选取，当我们说某个信号的相位角时，其实是相对于初相位而言的。所以很多时候，测量相位角并没有很大的意义（这个是叶贤基老师光学课上讲的，此处引用）。
+\par
+而相位差（通常来说，比相位角更有意义），它是相对两个信号而言的，即两个信号相位角的差值被称作相位差。
+\par
+相位差能表征两个信号之间的关系。设$\Delta \varphi$为第一个信号与第二个信号的相位角差值：
+\par
+如果$\Delta \varphi>0$，那么就称第一个信号超前于第二个信号；
+\par
+如果$\Delta \varphi<0$，那么就称第一个信号落后于第二个信号；
+\par
+如果$\Delta \varphi=0$，那么就称这两个信号同相；
+\par
+如果$\Delta \varphi=\pm 180^{\circ}$，那么就称这两个信号反相；
+\par
+相位差的概念应用广泛，在各种学科中都有涉及。例如在光学\cite{ced,dtem}工程当中，我们就会用到相位差的概念。设有两束频率相同，强度也相同的光，分别表示为
+\beq \label{38}
+E_{1}=E_{0} e^{i\left(\omega t+\varphi_{1}\right)}
+\eeq
+\beq \label{39}
+E_{2}=E_{0} e^{i\left(\omega t+\varphi_{2}\right)}
+\eeq
+现令两束光发生干涉，干涉后的光强可以写为
+\beq
+I=\left(E_{1}+E_{2}\right)^{*}\left(E_{1}+E_{2}\right)
+\eeq
+将式\cref{38}，\cref{39}代入上式，得到
+\beq
+I=I_{0}\left[e^{i\left(\omega t+\varphi_{1}\right)}+e^{i\left(\omega t+\varphi_{2}\right)}\right]\left[e^{-i\left(\omega t+\varphi_{1}\right)}+e^{-i\left(\omega t+\varphi_{2}\right)}\right]
+\eeq
+其中$I_0 = |E_0|^2$，将上式化简得到
+\beq
+I=I_{0}\left\{2+\left[e^{i\left(\varphi_{1}-\varphi_{2}\right)}+e^{-i\left(\varphi_{1}-\varphi_{2}\right)}\right]\right\}
+\eeq
+进一步化简，得到
+\beq \label{43}
+I=2 I_{0}+2 I_{0} \cos \Delta \varphi
+\eeq
+其中$\Delta \varphi=\varphi_{1}-\varphi_{2}$就是这两束光的相位差。从\cref{43}可以看见，相位差决定着干涉光强，
+因而决定着两束光是相消干涉，还是相涨干涉。所以，我们可以看到，相位差是一个非常重要的概念。
+\par
+根据原理推导部分的式\cref{measure}，以及最初引入$\theta$的定义，我们可以很容易知道， $\theta$是待测信号与参考信号之间的相位差（具体过程在原理部分已经论述得十分详细，此处不再重复）。
+
  
  
  
@@ -490,15 +558,15 @@ u_y(t) &= \mathrm{Re\ }e^{i\omega_0 t}\mathrm{Re\ }u_a(t)  + i\mathrm{Im\ }e^{i\
 \begin{tabular}{|p{32mm}|p{32mm}|p{32mm}|p{32mm}|}
 \hline
 年级、专业： & 17级 物理学 & 组号： & 实验班6 \\ \hline
-姓名： & 高寒 & 学号： & 17353019 \\ \hline
+姓名： & \Stuname & 学号： & \StuID \\ \hline
 日期： &  & 实验地点： & 珠海教学楼 A102 \\ \hline
-学生签名： &  \includegraphics[scale=0.09]{sign}& 评分： &  \\ \hline
+学生签名： & \includegraphics[scale=0.09]{sign}& 评分： &  \\ \hline
 日期： &  & 教师签名： &  \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{center}
-\LARGE{\textbf{\ExpeName}}
+{\LARGE{\textbf{\ExpeName}}}
 \end{center}
 \textbf{【实验内容、步骤、结果】}
 \\
@@ -690,14 +758,31 @@ $\theta$ &  &  &  &  &  \\ \hline
 \end{table}
 \newpage
 \textbf{【现场预习思考题】}
-\begin{itemize}
+\begin{enumerate}
 \item {\bf 噪声有哪些类型？一般测量对象本身的噪声是哪来的?它有什么特征？}\par
- 噪声有热噪声、温度噪声、散粒噪声、$1/f$噪声、产生-复合噪声、信号放大及处理电路噪声；一般测量对象本身的噪声来自热噪声。\par
-噪声的特征是无规、随机的变化。其每个傅立叶模$f(\omega)$是一个均值为0，方差为$P(\omega)$（功率谱）的随机变量。例如热噪声是
+ 噪声有三类：热噪声、散粒噪声和$1/f$噪声\cite{mpl}；这些噪声都是由元器件内部电子运动的涨落现象引起的。\par
+噪声的特征是无规、随机的变化。其每个傅立叶模$f(\omega)$是一个均值为0，方差为$P(\omega)$（功率谱）的随机变量。对热噪声和散粒噪声，它们都属于白噪声\cite{white_noise}，功率谱
+\beq
+P(\omega) = p_0
+\eeq
+为常数；$1/f$噪声的功率谱与频率成反比
+\beq
+P(\omega) = \frac{P}{\omega}
+\eeq
+在低频处的影响非常显著。
 \item {\bf 描述用教学实验箱配制不同信噪比信号的原理;实验箱生成的噪声与实际噪声是否一样？（请通过实验测量后再回答是否为白噪声）}\par
-
-
-
+教学试验箱通过拨码器选择可以得到不同信噪比的白噪声信号。\par
+实验箱利用双极性晶体管散粒噪声的功率特性来产生白噪声，这种白噪声是由散粒噪声、热噪声、配分噪声和$1/f$噪声组成的。晶体管基区和各项电阻上载流子的不规则热运动产生的电流涨落即为热噪声。晶体管中少数载流子通过发射极-基极结注入到基区时，少数载流子的数目和速度都有涨落，引起通过结的电流的微小变化。同时，少数载流子在基区内的不规则运动也将引起电流涨落，这些都产生晶体管的散粒噪声。在晶体管基区中，发射极电流的一部分变为集电极电流，另一部分变为基极电流，有一个由空穴-电子复合作用而定的电流分配系数。复合现象本身同样受到热起伏效应的影响，因此分配系数不是恒定的。它的微小变化也会引起集电极电流的起伏，这就是晶体管的配分噪声。在晶体管噪声频谱中，低频时噪声急剧上升,呈$1/f$关系，即其功率谱
+\beq
+P(\omega) \sim \frac{1}{\omega}
+\eeq
+随工艺条件、表面处理和环境气氛等的不同，取$f = 1-2$之间,故常称为$1/f$噪声。
+\par
+实验中用示波器直接测量实验箱的输出如，可以看到，其生成的噪声与实际中遇到的噪声无显著差异。
+\item {\bf 随着信噪比的降低，信号$R$、相位差$\theta$的测量值会有什么影响？（用实验结果回答）}
+\par
+随着信噪比降低，信号$R$随之降低，相位差$\theta$减小。
+\end{enumerate}
 
 
 
@@ -707,7 +792,7 @@ $\theta$ &  &  &  &  &  \\ \hline
 \newpage
 
 \textbf{【实验过程中遇到问题记录】}\par
-\cpic{0.81}{none}
+%\cpic{0.81}{none}
 %生成最终报告时将上面内容全部删除或注释（用\iffalse \fi），将扫描得到的实验报告保存为Record.pdf在LaTeX model for GPL下，将下行命令的注释号删去。注意根据实际页数调整pages参数。
 %\includepdf[pages=1-3]{Record}
 
@@ -725,10 +810,11 @@ $\theta$ &  &  &  &  &  \\ \hline
 \end{tabular}
 \end{table}
 \begin{center}
-\LARGE\textbf{{\ExpeName}}
+{\LARGE\textbf{{\ExpeName}}}
 \end{center}
 \textbf{【分析与讨论】}\\
 
+\newpage
 
 \bibliographystyle{IEEEtran}
 \bibliography{model.bib}

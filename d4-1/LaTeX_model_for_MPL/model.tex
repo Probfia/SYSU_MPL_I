@@ -157,7 +157,7 @@ A \LaTeX \ model for Modern Phys. Lab., SPA, SYSU by \em{\href{https://www.weibo
 \cpic{0.81}{none}
 \fi
 %生成最终报告时将上面内容全部删除或注释（用\iffalse \fi），将扫描得到的实验报告保存为Record.pdf在LaTeX model for GPL下，将下行命令的注释号删去。注意根据实际页数调整pages参数。
-%\includepdf[pages=1-9]{Record}
+\includepdf[pages=1-3]{Record}
 
 
 \newpage%分析与讨论
@@ -235,7 +235,7 @@ B_0 = 3224.44 + 24.03\times 5.01  = 3344.85\unit{(Gs)}
 \eeq
 此时旋转频率计，观测到信号出现明显跳动时，频率为
 \beq
-f = 9.390 \times 10^{13} \unit{Hz}
+f = 9.390 \times 10^{9} \unit{Hz}
 \eeq
 由公式
 \beq
@@ -243,7 +243,7 @@ f = g \frac{\mu_B}{h} B_0
 \eeq
 代入$\mu_B = 5.7884 \times 10^{-11} \unit{MeV/Gs}$，$h = 4.1357\times 10^{-21} \unit{MeV\cdot s}$，得到
 \beq
-g_{\rm DPPH} = \frac{fh}{\mu_B B_0} = \frac{9.390 \times 10^{13} \unit{Hz} \times 4.1357\times 10^{-21} \unit{MeV\cdot s}}{5.7884 \times 10^{-11} \unit{MeV/Gs} \times 3344.85\unit{(Gs)} }= 2.0058
+g_{\rm DPPH} = \frac{fh}{\mu_B B_0} = \frac{9.390 \times 10^{9} \unit{Hz} \times 4.1357\times 10^{-21} \unit{MeV\cdot s}}{5.7884 \times 10^{-11} \unit{MeV/T} \times 3344.85\unit{Gs} }= 2.0058
 \eeq
 由误差传递公式
 \beq
@@ -258,9 +258,29 @@ g_{\rm DPPH} = 2.0058(12)
 \\
 4.\textbf{横向弛豫时间$T_2$的计算}
 \par
-{\large
-没人会。
-}
+实验中测得
+\beq
+B' = 8.4\unit{Gs}
+\eeq
+通过导出的数据做吸收曲线如\cref{ren_cur}，随机选取5个峰，得到半高宽
+\beq
+\Delta t \approx 0.001 \unit{s}
+\eeq
+磁场差
+\bea
+\Delta B &= B'( \sin \omega t_2 - \sin \omega t_2)\\
+&= 2B' \cos \omega \frac{t_1 + t_2}{2} \sin \omega \frac{t_2 - t_1}{2} \\
+&= 2B'\sin \omega \frac{\Delta t}{2}
+\eea
+其中因为$\frac{t_1 + t_2}{2} = t_0$对应调制信号，$\sin \omega t_0 = 0$，$\cos \omega t_0 = 1$。代入数据得到
+\beq
+\Delta B \approx 2.628 \unit{Gs}
+\eeq
+于是，横向弛豫时间估计为
+\beq
+T_2 = \frac{2}{\gamma \Delta B} \sim 4 \times 10^{-8} \unit{s} \sim 40 \unit{ns}
+\eeq
+
 \emptyline
 \\
 5.\textbf{波导波长和微波波长的计算}
